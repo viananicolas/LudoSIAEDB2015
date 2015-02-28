@@ -2,58 +2,68 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="LudoSIAEDB2015.MainWindow"
-        Title="MainWindow" Height="599.811" Width="934" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-	<Window.Background>
-		<ImageBrush ImageSource="pack://siteoforigin:,,,/Oak PalazzoFumo sample.jpg"/>
-	</Window.Background>
+        Title="LUDO" Height="623.811" Width="934" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Opacity="0.995" FontFamily="Segoe UI" TextOptions.TextFormattingMode="Display" Icon="icon_148_ludo.ico">
+	<Window.Resources>
+		<Storyboard x:Key="OnChecked1"/>
+	<Image x:Key="1" Source="1.png" Height="80" Width="80" />
+    <Image x:Key="2" Source="2.png" Height="80" Width="80" />
+	<Image x:Key="3" Source="3.png" Height="80" Width="80" />
+	<Image x:Key="4" Source="4.png" Height="80" Width="80" />
+	<Image x:Key="5" Source="5.png" Height="80" Width="80" />
+	<Image x:Key="6" Source="6.png" Height="80" Width="80" />
+
+	</Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="pack://siteoforigin:,,,/Oak PalazzoFumo sample.jpg"/>
+    </Window.Background>
     <Grid HorizontalAlignment="Left" Width="753" Height="595.333" VerticalAlignment="Top" Margin="0,0,0,-29">
-        <Grid x:Name="FinishLine" HorizontalAlignment="Right" Height="122" Margin="0,0,407,251.333" VerticalAlignment="Bottom" Width="121.999" Background="White">
-			
-    		<Canvas>
-    			<Polygon
+        <Grid x:Name="FinishLine" HorizontalAlignment="Right" Height="122" Margin="0,0,407,251.333" VerticalAlignment="Bottom" Width="121.999">
+
+            <Canvas Background="Black">
+                <Polygon
     				Points="300,200 400,125 400,275 300,200"
     				Stroke="Black" 
     				StrokeThickness="2" Canvas.Left="-236.251" Canvas.Top="-140" Height="262" Width="384.5" Fill="DarkBlue"/>
-    			<Polygon
+                <Polygon
     				Points="300,200 400,125 400,275 300,200"
     				Stroke="Black" 
     				StrokeThickness="2" Canvas.Left="-41.084" Canvas.Top="-16.083" Height="262" Width="384.5" RenderTransformOrigin="0.5,0.5" Fill="Green">
-    				<Polygon.RenderTransform>
-    					<TransformGroup>
-    						<ScaleTransform/>
-    						<SkewTransform/>
-    						<RotateTransform Angle="180"/>
-    						<TranslateTransform/>
-    					</TransformGroup>
-    				</Polygon.RenderTransform>
-    			</Polygon>
-    			<Polygon
+                    <Polygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Polygon.RenderTransform>
+                </Polygon>
+                <Polygon
     				Points="300,200 400,125 400,275 300,200"
     				Stroke="Black" 
     				StrokeThickness="2" Canvas.Left="-77.334" Canvas.Top="-176.25" Height="262" Width="384.5" RenderTransformOrigin="0.5,0.5" Fill="Yellow">
-    				<Polygon.RenderTransform>
-    					<TransformGroup>
-    						<ScaleTransform/>
-    						<SkewTransform/>
-    						<RotateTransform Angle="90"/>
-    						<TranslateTransform/>
-    					</TransformGroup>
-    				</Polygon.RenderTransform>
-    			</Polygon>
-    			<Polygon
+                    <Polygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Polygon.RenderTransform>
+                </Polygon>
+                <Polygon
     				Points="300,200 400,125 400,275 300,200"
     				Stroke="Black" 
     				StrokeThickness="2" Canvas.Left="-200.501" Canvas.Top="19.25" Height="262" Width="384.5" RenderTransformOrigin="0.5,0.5" Fill="Red">
-    				<Polygon.RenderTransform>
-    					<TransformGroup>
-    						<ScaleTransform/>
-    						<SkewTransform/>
-    						<RotateTransform Angle="-90"/>
-    						<TranslateTransform/>
-    					</TransformGroup>
-    				</Polygon.RenderTransform>
-    			</Polygon>
-    			<!--<Polygon Fill="Green" Canvas.Left="-12.001" Canvas.Top="-11.832" Height="122" Width="122" RenderTransformOrigin="0.5,0.5">
+                    <Polygon.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Polygon.RenderTransform>
+                </Polygon>
+                <!--<Polygon Fill="Green" Canvas.Left="-12.001" Canvas.Top="-11.832" Height="122" Width="122" RenderTransformOrigin="0.5,0.5">
 					<Polygon.RenderTransform>
 						<TransformGroup>
 							<ScaleTransform/>
@@ -66,139 +76,309 @@
 				<PointCollection>120,150 0,150 50,0</PointCollection>
 			</Polygon.Points>
 				</Polygon>-->
-    		</Canvas>
-    	</Grid>
-    	<Grid x:Name="Green" HorizontalAlignment="Right" Height="121.5" Margin="0,223.332,528.999,0" VerticalAlignment="Top" Width="220" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
-    		<Grid.RowDefinitions>
-    			<RowDefinition />
-    			<RowDefinition/>
-    			<RowDefinition/>
-    		</Grid.RowDefinitions>
-    		<Grid.ColumnDefinitions>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    		</Grid.ColumnDefinitions>
-    		<Rectangle Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-    		<Rectangle Grid.Column="0" Grid.Row="1" Uid="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-    		<Rectangle Grid.Column="0" Grid.Row="2" Uid="2" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			
-			<Rectangle Grid.Column="1" Grid.Row="2" Uid="5" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			<Rectangle Grid.Column="2" Grid.Row="0" Uid="6" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			<Rectangle Grid.Column="2" Grid.Row="2" Uid="8" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			<Rectangle Grid.Column="3" Grid.Row="0" Uid="9" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			<Rectangle Grid.Column="3" Grid.Row="2" Uid="11" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			<Rectangle Grid.Column="4" Grid.Row="0" Uid="12" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			<Rectangle Grid.Column="4" Grid.Row="2" Uid="14" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			<Rectangle Grid.Column="5" Grid.Row="0" Uid="15" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-			<Rectangle Grid.Column="5" Grid.Row="2" Uid="17" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-    		<!--Grids verdes especiais-->
-    		<Rectangle Grid.Column="1" Grid.Row="0" Uid="3" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-    		<Rectangle Grid.Column="1" Grid.Row="1" Uid="4" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-    		<Rectangle Grid.Column="2" Grid.Row="1" Uid="7" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-    		<Rectangle Grid.Column="3" Grid.Row="1" Uid="10" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-    		<Rectangle Grid.Column="4" Grid.Row="1" Uid="13" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-    		<Rectangle Grid.Column="5" Grid.Row="1" Uid="16" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-    	</Grid>
-    	<Grid x:Name="Blue" HorizontalAlignment="Right" Height="121.5" Margin="0,222.582,185.083,0" VerticalAlignment="Top" Width="222" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" ShowGridLines="True">
-    		<Grid.RowDefinitions>
-    			<RowDefinition />
-    			<RowDefinition/>
-    			<RowDefinition/>
-    		</Grid.RowDefinitions>
-    		<Grid.ColumnDefinitions>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    		</Grid.ColumnDefinitions>
-    		<Rectangle Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<Rectangle Grid.Column="0" Grid.Row="1" Uid="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<Rectangle Grid.Column="0" Grid.Row="2" Uid="2" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<!--<Rectangle Grid.Column="0" Grid.Row="3" Uid="3" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>-->
-    		<!--Grids verdes especiais-->
-    		<Rectangle Grid.Column="4" Grid.Row="2" Fill="DarkBlue"/>
-    		<Rectangle Grid.Column="4" Grid.Row="1" Fill="DarkBlue"/>
-    		<Rectangle Grid.Column="3" Grid.Row="1" Fill="DarkBlue"/>
-    		<Rectangle Grid.Column="2" Grid.Row="1" Fill="DarkBlue"/>
-    		<Rectangle Grid.Column="1" Grid.Row="1" Fill="DarkBlue"/>
-    		<Rectangle Grid.Column="0" Grid.Row="1" Fill="DarkBlue"/>
-    	</Grid>
-    	<Grid x:Name="Red" HorizontalAlignment="Left" Margin="174.75,50.914,0,0" Width="221" Height="121.5" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" ShowGridLines="True">
-    		<Grid.RenderTransform>
-    			<TransformGroup>
-    				<ScaleTransform/>
-    				<SkewTransform/>
-    				<RotateTransform Angle="90"/>
-    				<TranslateTransform/>
-    			</TransformGroup>
-    		</Grid.RenderTransform>
-    		<Grid.RowDefinitions>
-    			<RowDefinition />
-    			<RowDefinition/>
-    			<RowDefinition/>
-    		</Grid.RowDefinitions>
-    		<Grid.ColumnDefinitions>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    		</Grid.ColumnDefinitions>
-    		<Rectangle Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<Rectangle Grid.Column="0" Grid.Row="1" Uid="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<Rectangle Grid.Column="0" Grid.Row="2" Uid="2" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<Rectangle Grid.Column="0" Grid.Row="2" Uid="3" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+            </Canvas>
+        </Grid>
+        <Grid x:Name="Green" HorizontalAlignment="Right" Height="121.5" Margin="0,223.332,528.999,0" VerticalAlignment="Top" Width="220" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="0" Grid.Row="1" Uid="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="0" Grid.Row="2" Uid="2" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-    		<!--Grids verdes especiais-->
-    		<Rectangle Grid.Column="1" Grid.Row="0" Fill="Red"/>
-    		<Rectangle Grid.Column="1" Grid.Row="1" Fill="Red"/>
-    		<Rectangle Grid.Column="2" Grid.Row="1" Fill="Red"/>
-    		<Rectangle Grid.Column="3" Grid.Row="1" Fill="Red"/>
-    		<Rectangle Grid.Column="4" Grid.Row="1" Fill="Red"/>
-    		<Rectangle Grid.Column="5" Grid.Row="1" Fill="Red"/>
-    	</Grid>
-    	<Grid x:Name="Yellow" HorizontalAlignment="Left" Margin="175.326,0,0,79.523" Height="121.5" Width="221" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom" ShowGridLines="True">
-    		<Grid.RenderTransform>
-    			<TransformGroup>
-    				<ScaleTransform/>
-    				<SkewTransform/>
-    				<RotateTransform Angle="90"/>
-    				<TranslateTransform/>
-    			</TransformGroup>
-    		</Grid.RenderTransform>
-    		<Grid.RowDefinitions>
-    			<RowDefinition />
-    			<RowDefinition/>
-    			<RowDefinition/>
-    		</Grid.RowDefinitions>
-    		<Grid.ColumnDefinitions>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    			<ColumnDefinition/>
-    		</Grid.ColumnDefinitions>
-    		<Rectangle Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<Rectangle Grid.Column="0" Grid.Row="1" Uid="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<Rectangle Grid.Column="0" Grid.Row="2" Uid="2" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-    		<Rectangle Grid.Column="0" Grid.Row="2" Uid="3" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+            <Rectangle Grid.Column="1" Grid.Row="2" Uid="5" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="2" Grid.Row="0" Uid="6" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="2" Grid.Row="2" Uid="8" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="3" Grid.Row="0" Uid="9" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="3" Grid.Row="2" Uid="11" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="4" Grid.Row="0" Uid="12" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="4" Grid.Row="2" Uid="14" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="5" Grid.Row="0" Uid="15" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="5" Grid.Row="2" Uid="17" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <!--Grids verdes especiais-->
+            <Rectangle Grid.Column="1" Grid.Row="0" Uid="3" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="1" Grid.Row="1" Uid="4" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="2" Grid.Row="1" Uid="7" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="3" Grid.Row="1" Uid="10" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="4" Grid.Row="1" Uid="13" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="5" Grid.Row="1" Uid="16" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+        </Grid>
+        <Grid x:Name="Blue" HorizontalAlignment="Right" Height="121.5" Margin="0,222.582,185.083,0" VerticalAlignment="Top" Width="222" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-    		<!--Grids verdes especiais-->
-    		<Rectangle Grid.Column="0" Grid.Row="1" Fill="Yellow"/>
-    		<Rectangle Grid.Column="1" Grid.Row="1" Fill="Yellow"/>
-    		<Rectangle Grid.Column="2" Grid.Row="1" Fill="Yellow"/>
-    		<Rectangle Grid.Column="3" Grid.Row="1" Fill="Yellow"/>
-    		<Rectangle Grid.Column="4" Grid.Row="1" Fill="Yellow"/>
-			<Rectangle Grid.Column="4" Grid.Row="0" Fill="Yellow"/>
-    	</Grid>
-    	<GridSplitter HorizontalAlignment="Left" Height="561.5" Margin="572.917,0,0,0" VerticalAlignment="Top" Width="5"/>
+
+            <Rectangle Grid.Column="5" Grid.Row="2" Uid="18" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="5" Grid.Row="1" Uid="19" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="5" Grid.Row="0" Uid="20" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+
+            <Rectangle Grid.Column="4" Grid.Row="0" Uid="21" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+
+            <Rectangle Grid.Column="3" Grid.Row="0" Uid="24" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="3" Grid.Row="2" Uid="26" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+
+            <Rectangle Grid.Column="2" Grid.Row="0" Uid="27" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="2" Grid.Row="2" Uid="29" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+
+            <Rectangle Grid.Column="1" Grid.Row="0" Uid="30" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="1" Grid.Row="2" Uid="32" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+
+            <Rectangle Grid.Column="0" Grid.Row="0" Uid="33" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle Grid.Column="0" Grid.Row="2" Uid="35" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+
+            <!--<Rectangle Grid.Column="0" Grid.Row="3" Uid="3" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>-->
+
+            <!--Grids azuis especiais-->
+            <Rectangle Grid.Column="4" Grid.Row="2" Uid="22" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="4" Grid.Row="1" Uid="23" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="3" Grid.Row="1" Uid="25" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="2" Grid.Row="1" Uid="28" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="1" Grid.Row="1" Uid="31" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="0" Grid.Row="1" Uid="34" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+        </Grid>
+        <Grid x:Name="Red" HorizontalAlignment="Left" Margin="174.249,50.914,0,0" Width="221" Height="121.5" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Grid.Row="0" Uid="54" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="0" Grid.Row="1" Uid="55" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="0" Grid.Row="2" Uid="56" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+            <Rectangle Grid.Column="1" Grid.Row="2" Uid="59" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+			<Rectangle Grid.Column="2" Grid.Row="0" Uid="60" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="2" Grid.Row="2" Uid="62" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+			<Rectangle Grid.Column="3" Grid.Row="0" Uid="63" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="3" Grid.Row="2" Uid="65" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+			<Rectangle Grid.Column="4" Grid.Row="0" Uid="66" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="4" Grid.Row="2" Uid="68" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+			<Rectangle Grid.Column="5" Grid.Row="0" Uid="69" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="5" Grid.Row="2" Uid="71" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+            <!--Grids vermelhos especiais-->
+            <Rectangle Grid.Column="1" Grid.Row="0" Uid="57" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="1" Grid.Row="1" Uid="58" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="2" Grid.Row="1" Uid="61" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="3" Grid.Row="1" Uid="64" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="4" Grid.Row="1" Uid="67" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="5" Grid.Row="1" Uid="70" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+        </Grid>
+        <Grid x:Name="Yellow" HorizontalAlignment="Left" Margin="174.66,0,0,80.189" Height="121.5" Width="221" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Grid.Row="0" Uid="36" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="0" Grid.Row="2" Uid="38" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+            <Rectangle Grid.Column="1" Grid.Row="0" Uid="39" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="1" Grid.Row="2" Uid="41" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+            <Rectangle Grid.Column="2" Grid.Row="0" Uid="42" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="2" Grid.Row="2" Uid="44" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+            <Rectangle Grid.Column="3" Grid.Row="0" Uid="45" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="3" Grid.Row="2" Uid="47" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+            <Rectangle Grid.Column="4" Grid.Row="0" Uid="49" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+            <Rectangle Grid.Column="5" Grid.Row="0" Uid="51" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="5" Grid.Row="1" Uid="52" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="5" Grid.Row="2" Uid="53" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+
+            <!--Grids amarelos especiais-->
+            <Rectangle Grid.Column="0" Grid.Row="1" Uid="37" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="1" Grid.Row="1" Uid="40" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="2" Grid.Row="1" Uid="43" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="3" Grid.Row="1" Uid="46" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="4" Grid.Row="1" Uid="48" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+            <Rectangle Grid.Column="4" Grid.Row="2" Uid="50" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+        </Grid>
+        <GridSplitter HorizontalAlignment="Left" Margin="567.917,0,0,24.833" Width="5" Background="Black"/>
+        <GridSplitter HorizontalAlignment="Left" Margin="-0.999,0,0,24.833" Width="5" Background="Black"/>
+        <GridSplitter HorizontalAlignment="Left" Margin="282.917,283,0,-258.167" Width="5" Background="Black" RenderTransformOrigin="0.5,0.5">
+            <GridSplitter.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GridSplitter.RenderTransform>
+        </GridSplitter>
+        <GridSplitter HorizontalAlignment="Left" Margin="280.417,-282.833,0,307.666" Width="5" Background="Black" RenderTransformOrigin="0.5,0.5">
+            <GridSplitter.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GridSplitter.RenderTransform>
+        </GridSplitter>
+		<!--COLOCAR CANVAS AO INVÉS DE UM GRID-->
+        <Grid HorizontalAlignment="Left" Height="595.333" Margin="568,4.332,-173,-4.332" VerticalAlignment="Top" Width="358">
+        	
+        	<Label Content="Rodadas:" HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
+        	<Label Content="#" HorizontalAlignment="Left" Margin="125.603,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
+        	<Button Content="Iniciar jogo" HorizontalAlignment="Left" Margin="31,366,0,0" VerticalAlignment="Top" Width="100" Height="71"/>
+        	<ToggleButton x:Name="Player1" Content="Jogador 1" HorizontalAlignment="Left" Height="33" Margin="31,104,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Red" BorderBrush="White" BorderThickness="1" Style="{DynamicResource ToggleButtonStyle1}"/>
+        	<ToggleButton x:Name="Player2" Content="Jogador 2" HorizontalAlignment="Left" Height="33" Margin="31,161,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Green" Style="{DynamicResource ToggleButtonStyle2}"/>
+        	<ToggleButton x:Name="Player3" Content="Jogador 3" HorizontalAlignment="Left" Height="33" Margin="31,218,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Yellow" Style="{DynamicResource ToggleButtonStyle3}"/>
+        	<ToggleButton x:Name="Player4" Content="Jogador 4" HorizontalAlignment="Left" Height="33" Margin="31,275,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="DarkBlue" Style="{DynamicResource ToggleButtonStyle4}"/>
+            <Button x:Name="GirarDado" HorizontalAlignment="Left" Margin="210,218,0,0" VerticalAlignment="Top" Width="87" Click="GirarDado_Click" Height="90" BorderBrush="Black" BorderThickness="3" Style="{DynamicResource ButtonStyle1}">
+            	<Button.Effect>
+            		<DropShadowEffect/>
+            	</Button.Effect>
+				<DynamicResource ResourceKey="1"/>
+            </Button>
+            <Label x:Name="numjogado" Content="Label" HorizontalAlignment="Left" Margin="235,313,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Canvas HorizontalAlignment="Left" Height="217.668" Margin="345.917,4.332,0,0" VerticalAlignment="Top" Width="222.083">
+        	<Ellipse Name="BaseVermelha" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Height="197.668" Canvas.Left="10" Stroke="Red" StrokeThickness="10" Canvas.Top="10" Width="202.083"/>
+        	<Ellipse Name="PeaoVermelho1" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="63" Canvas.Top="147.25" Cursor="Hand">
+        		<Ellipse.Effect>
+        			<DropShadowEffect/>
+        		</Ellipse.Effect>
+        	</Ellipse>
+        	<Ellipse Name="PeaoVermelho2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="133" Canvas.Top="147.25" Cursor="Hand">
+        		<Ellipse.Effect>
+        			<DropShadowEffect/>
+        		</Ellipse.Effect>
+        	</Ellipse>
+        	<Ellipse Name="PeaoVermelho3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="63" Canvas.Top="36.25" Cursor="Hand">
+        		<Ellipse.Effect>
+        			<DropShadowEffect/>
+        		</Ellipse.Effect>
+        	</Ellipse>
+        	<Ellipse Name="PeaoVermelho4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="133" Canvas.Top="36.25" Cursor="Hand">
+        		<Ellipse.Effect>
+        			<DropShadowEffect/>
+        		</Ellipse.Effect>
+        	</Ellipse>
+        </Canvas>
+        <Ellipse x:Name="BaseVerde" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Green" StrokeThickness="10" Margin="10,10,540.917,387.665"/>
+        <Ellipse x:Name="PeaoVerde1" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="63,147.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoVerde2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,147.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoVerde3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="63,36.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoVerde4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,36.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        
+		<Ellipse x:Name="BaseAmarela" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Yellow" StrokeThickness="10" Margin="10,352,540.917,45.665"/>
+        <Ellipse x:Name="PeaoAmarelo1" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="63,489.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoAmarelo2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="133,489.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoAmarelo3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="63,378.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoAmarelo4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="133,378.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="BaseAzul" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="DarkBlue" StrokeThickness="10" Margin="355,352,195.917,45.665"/>
+        <Ellipse x:Name="PeaoAzul1" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="408,489.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoAzul2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,489.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoAzul3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="408,378.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
+        <Ellipse x:Name="PeaoAzul4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,378.25,0,0" Cursor="Hand">
+        	<Ellipse.Effect>
+        		<DropShadowEffect/>
+        	</Ellipse.Effect>
+        </Ellipse>
     </Grid>
 </Window>

@@ -18,14 +18,14 @@ namespace Ludo.Model.Entidade
         private int[][] inumChegada;
         private int[][] iblocosRestantes;
 
-        public string Cor { get { return strCor;} set; }
+       // public string Cor { get { return strCor;} set; }
 
-        private static void InicializaValores(bool newGame)
+        /*private static void InicializaValores(bool newGame)
         {
             if(newGame)
             {
-                
+               
             }
-        }
+        }*/
     }
 }
