@@ -280,7 +280,7 @@
         	
         	<Label Content="Rodadas:" HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
         	<Label Content="#" HorizontalAlignment="Left" Margin="125.603,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
-        	<Button Content="Iniciar jogo" HorizontalAlignment="Left" Margin="31,366,0,0" VerticalAlignment="Top" Width="100" Height="71"/>
+        	<Button x:Name="IniciaJogo" Content="Iniciar jogo" HorizontalAlignment="Left" Margin="31,366,0,0" VerticalAlignment="Top" Width="100" Height="71" Click="IniciaJogo_Click"/>
         	<ToggleButton x:Name="Player1" Content="Jogador 1" HorizontalAlignment="Left" Height="33" Margin="31,104,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Red" BorderBrush="White" BorderThickness="1" Style="{DynamicResource ToggleButtonStyle1}"/>
         	<ToggleButton x:Name="Player2" Content="Jogador 2" HorizontalAlignment="Left" Height="33" Margin="31,161,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Green" Style="{DynamicResource ToggleButtonStyle2}"/>
         	<ToggleButton x:Name="Player3" Content="Jogador 3" HorizontalAlignment="Left" Height="33" Margin="31,218,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Yellow" Style="{DynamicResource ToggleButtonStyle3}"/>

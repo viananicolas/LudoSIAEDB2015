@@ -46,5 +46,12 @@ namespace LudoSIAEDB2015
             numjogado.Content = faceDados;
           
         }
+
+        private void IniciaJogo_Click(object sender, RoutedEventArgs e)
+        {
+            int z=2;
+            if (z == 2)
+                throw new Exception("É necessário, no mínimo, dois jogadores para começar a partida.");
+        }
     }
 }
