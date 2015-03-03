@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Media3D;
+using LudoSIAEDB2015;
+using System.Windows.Media.Animation;
 
 namespace LudoSIAEDB2015
 {
@@ -21,7 +23,7 @@ namespace LudoSIAEDB2015
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+		public MainWindow()
         {
             InitializeComponent();
         }
@@ -42,16 +44,32 @@ namespace LudoSIAEDB2015
             Random rand = new Random();
             int numMovimentos = rand.Next(1, 7);
             string faceDados = numMovimentos.ToString();
-            GirarDado.Content = FindResource(faceDados);
-            numjogado.Content = faceDados;
-          
+            btnGirarDado.Content = FindResource(faceDados);
+            numjogado.Content = faceDados;          
         }
 
         private void IniciaJogo_Click(object sender, RoutedEventArgs e)
         {
-            int z=2;
-            if (z == 2)
-                throw new Exception("É necessário, no mínimo, dois jogadores para começar a partida.");
-        }
-    }
+			
+
+			var position = R01.PointToScreen(new Point(0, 0));
+			PeaoAzul1.PointToScreen(new Point(position.X, position.Y));
+
+			DoubleAnimation moverx = new DoubleAnimation(position.X, position.Y, TimeSpan.FromSeconds(2));
+			DoubleAnimation movery = new DoubleAnimation(position.Y, position.X, TimeSpan.FromSeconds(2));
+			PeaoAzul1.BeginAnimation(Rectangle.RadiusXProperty, moverx);
+
+		}
+		}
 }
+/*public static Rect GetAbsoltutePlacement(this FrameworkElement element, bool relativeToScreen = false)
+{
+	var absolutePos = element.PointToScreen(new Point(0, 0));
+	if (relativeToScreen)
+	{
+		return new Rect(absolutePos.X, absolutePos.Y, element.ActualWidth, element.ActualHeight);
+	}
+	var posMW = Application.Current.MainWindow.PointToScreen(new Point(0, 0));
+	absolutePos = new Point(absolutePos.X - posMW.X, absolutePos.Y - posMW.Y);
+	return new Rect(absolutePos.X, absolutePos.Y, element.ActualWidth, element.ActualHeight);
+}*/

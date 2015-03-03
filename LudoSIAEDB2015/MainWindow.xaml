@@ -92,7 +92,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle x:Name="R01" Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
             <Rectangle Grid.Column="0" Grid.Row="1" Uid="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
             <Rectangle Grid.Column="0" Grid.Row="2" Uid="2" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
@@ -144,7 +144,7 @@
             <Rectangle Grid.Column="1" Grid.Row="0" Uid="30" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
             <Rectangle Grid.Column="1" Grid.Row="2" Uid="32" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-            <Rectangle Grid.Column="0" Grid.Row="0" Uid="33" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+            <Rectangle x:Name="Q33" Grid.Column="0" Grid.Row="0" Uid="33" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
             <Rectangle Grid.Column="0" Grid.Row="2" Uid="35" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
             <!--<Rectangle Grid.Column="0" Grid.Row="3" Uid="3" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>-->
@@ -278,14 +278,14 @@
 		<!--COLOCAR CANVAS AO INVÉS DE UM GRID-->
         <Grid HorizontalAlignment="Left" Height="595.333" Margin="568,4.332,-173,-4.332" VerticalAlignment="Top" Width="358">
         	
-        	<Label Content="Rodadas:" HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
-        	<Label Content="#" HorizontalAlignment="Left" Margin="125.603,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
-        	<Button x:Name="IniciaJogo" Content="Iniciar jogo" HorizontalAlignment="Left" Margin="31,366,0,0" VerticalAlignment="Top" Width="100" Height="71" Click="IniciaJogo_Click"/>
-        	<ToggleButton x:Name="Player1" Content="Jogador 1" HorizontalAlignment="Left" Height="33" Margin="31,104,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Red" BorderBrush="White" BorderThickness="1" Style="{DynamicResource ToggleButtonStyle1}"/>
-        	<ToggleButton x:Name="Player2" Content="Jogador 2" HorizontalAlignment="Left" Height="33" Margin="31,161,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Green" Style="{DynamicResource ToggleButtonStyle2}"/>
-        	<ToggleButton x:Name="Player3" Content="Jogador 3" HorizontalAlignment="Left" Height="33" Margin="31,218,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Yellow" Style="{DynamicResource ToggleButtonStyle3}"/>
-        	<ToggleButton x:Name="Player4" Content="Jogador 4" HorizontalAlignment="Left" Height="33" Margin="31,275,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="DarkBlue" Style="{DynamicResource ToggleButtonStyle4}"/>
-            <Button x:Name="GirarDado" HorizontalAlignment="Left" Margin="210,218,0,0" VerticalAlignment="Top" Width="87" Click="GirarDado_Click" Height="90" BorderBrush="Black" BorderThickness="3" Style="{DynamicResource ButtonStyle1}">
+        	<Label Content="Turnos:" HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
+        	<Label x:Name="lblnumTurnos" Content="#" HorizontalAlignment="Left" Margin="125.603,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
+        	<Button x:Name="btnIniciaJogo" Content="Iniciar jogo" HorizontalAlignment="Left" Margin="31,366,0,0" VerticalAlignment="Top" Width="100" Height="71" Click="IniciaJogo_Click"/>
+        	<ToggleButton x:Name="btnPlayer1" Content="Jogador 1" HorizontalAlignment="Left" Height="33" Margin="31,104,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Red" BorderBrush="White" BorderThickness="1" Style="{DynamicResource ToggleButtonStyle1}"/>
+        	<ToggleButton x:Name="btnPlayer2" Content="Jogador 2" HorizontalAlignment="Left" Height="33" Margin="31,161,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Green" Style="{DynamicResource ToggleButtonStyle2}"/>
+        	<ToggleButton x:Name="btnPlayer3" Content="Jogador 3" HorizontalAlignment="Left" Height="33" Margin="31,218,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Yellow" Style="{DynamicResource ToggleButtonStyle3}"/>
+        	<ToggleButton x:Name="btnPlayer4" Content="Jogador 4" HorizontalAlignment="Left" Height="33" Margin="31,275,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="DarkBlue" Style="{DynamicResource ToggleButtonStyle4}"/>
+            <Button x:Name="btnGirarDado" HorizontalAlignment="Left" Margin="210,218,0,0" VerticalAlignment="Top" Width="87" Click="GirarDado_Click" Height="90" BorderBrush="Black" BorderThickness="3" Style="{DynamicResource ButtonStyle1}">
             	<Button.Effect>
             		<DropShadowEffect/>
             	</Button.Effect>
@@ -375,7 +375,7 @@
         		<DropShadowEffect/>
         	</Ellipse.Effect>
         </Ellipse>
-        <Ellipse x:Name="PeaoAzul4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,378.25,0,0" Cursor="Hand">
+        <Ellipse x:Name="PeaoAzul4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,378.25,0,0" Cursor="Hand" IsManipulationEnabled="True">
         	<Ellipse.Effect>
         		<DropShadowEffect/>
         	</Ellipse.Effect>
