@@ -50,15 +50,19 @@ namespace LudoSIAEDB2015
 
         private void IniciaJogo_Click(object sender, RoutedEventArgs e)
         {
-			
+	
+			Storyboard fds = this.FindResource("MoverPeaoLado") as Storyboard;
+			//fds.Begin();
+			var x = Canvas.GetLeft(R01);
+			var y = Canvas.GetTop(R01);
+			Canvas.SetLeft(R01, 98);
+			Canvas.SetTop(R01, 54);
+			DoubleAnimationUsingKeyFrames movy = this.FindName("PeaoMovimentoY") as DoubleAnimationUsingKeyFrames;
 
-			var position = R01.PointToScreen(new Point(0, 0));
-			PeaoAzul1.PointToScreen(new Point(position.X, position.Y));
-
-			DoubleAnimation moverx = new DoubleAnimation(position.X, position.Y, TimeSpan.FromSeconds(2));
-			DoubleAnimation movery = new DoubleAnimation(position.Y, position.X, TimeSpan.FromSeconds(2));
-			PeaoAzul1.BeginAnimation(Rectangle.RadiusXProperty, moverx);
-
+			foreach (var pular in fds.Children)
+			{
+				Storyboard.SetTarget(pular, R01);
+			}
 		}
 		}
 }
