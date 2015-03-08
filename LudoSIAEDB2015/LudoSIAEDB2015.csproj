@@ -114,6 +114,12 @@
     <Resource Include="5.png" />
     <Resource Include="6.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ludo.Model\Ludo.Model.csproj">
+      <Project>{c60a542d-7bb9-455a-8ef5-936ed1d67f5e}</Project>
+      <Name>Ludo.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

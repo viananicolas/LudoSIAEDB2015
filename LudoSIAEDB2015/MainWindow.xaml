@@ -5,33 +5,86 @@
         Title="LUDO" Height="623.811" Width="934" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Opacity="0.995" FontFamily="Segoe UI" TextOptions.TextFormattingMode="Display" Icon="icon_148_ludo.ico">
     <Window.Resources>
         <Storyboard x:Key="OnChecked1"/>
+        <Storyboard x:Key="PeaoSairBaseAzul" >
+     <ThicknessAnimationUsingKeyFrames x:Name="LeaveBase" Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+       <!-- <SplineThicknessKeyFrame KeyTime="00:00:00" Value="408,489.25,0,0" />-->
+        <SplineThicknessKeyFrame x:Name="Destino" KeyTime="00:00:01" Value="535,270.25,0,0" />
+     </ThicknessAnimationUsingKeyFrames>
+</Storyboard>
+        <Style TargetType="Ellipse" x:Key="OutofBase">
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                </Setter.Value>
+                  <!--  <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>-->
+            </Setter>   
+            <Setter Property="Margin" Value="{DynamicResource PeaoSairBaseAzul}">
+            </Setter>        
+        </Style>
         <Image x:Key="1" Source="1.png" Height="80" Width="80" />
         <Image x:Key="2" Source="2.png" Height="80" Width="80" />
         <Image x:Key="3" Source="3.png" Height="80" Width="80" />
         <Image x:Key="4" Source="4.png" Height="80" Width="80" />
         <Image x:Key="5" Source="5.png" Height="80" Width="80" />
         <Image x:Key="6" Source="6.png" Height="80" Width="80" />
+        <!--<Style TargetType="Ellipse" x:Key="MoveLeft">
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+            </Setter.Value> 
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect/>
+                </Setter.Value>
+            </Setter>
+    
+     
+        </Style>-->
         <Storyboard x:Key="PeaoMoverCima">
-            <DoubleAnimationUsingKeyFrames x:Name="PeaoMovimentoY" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="PeaoAzul1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="PeaoAzul1">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-179"/>
             </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames x:Name="PeaoMovimentoX" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="PeaoAzul1">
-                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="90"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="PeaoAzul1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="90" />
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="MoverPeaoLado" RepeatBehavior="1x">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="PeaoAzul1">
-                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-38"/>
+                <EasingDoubleKeyFrame x:Name="PeaoMovimentoX" KeyTime="0:0:0.6" Value="-38"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="PeaoAzul1">
-                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                <EasingDoubleKeyFrame x:Name="PeaoMovimentoY" KeyTime="0:0:0.6" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+		<Storyboard x:Key="loco">
 
+                <PointAnimation
+                Storyboard.TargetProperty="Center"
+                Storyboard.TargetName="PeaoAzul1"
+                Duration="0:0:2" From="-38,0" To="-58,0" />
+              </Storyboard>
     </Window.Resources>
     <Window.Triggers>
-        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <!--<BeginStoryboard Storyboard="{StaticResource PeaoMoverCima}"/>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<!--<BeginStoryboard Storyboard="{StaticResource PeaoMoverCima}"/>
             <BeginStoryboard Storyboard="{StaticResource MoverPeaoLado}"/>-->
         </EventTrigger>
     </Window.Triggers>
@@ -384,30 +437,23 @@
                 </Ellipse.Effect>
             </Ellipse>
             <Ellipse x:Name="BaseAzul" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="DarkBlue" StrokeThickness="10" Margin="355,352,195.917,45.665"/>
-            <Ellipse x:Name="PeaoAzul1" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="408,489.25,0,0" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
-                <Ellipse.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Ellipse.RenderTransform>
+            <Ellipse x:Name="PeaoAzul1" Style="{StaticResource OutofBase}" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="408,489.25,0,0" Cursor="Hand" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="PeaoAzul1_MouseLeftButtonDown" >
+               
                 <Ellipse.Effect>
                     <DropShadowEffect/>
                 </Ellipse.Effect>
             </Ellipse>
-            <Ellipse x:Name="PeaoAzul2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,489.25,0,0" Cursor="Hand">
+            <Ellipse x:Name="PeaoAzul2" Style="{StaticResource OutofBase}" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,489.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAzul2_MouseLeftButtonDown">
                 <Ellipse.Effect>
                     <DropShadowEffect/>
                 </Ellipse.Effect>
             </Ellipse>
-            <Ellipse x:Name="PeaoAzul3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="408,378.25,0,0" Cursor="Hand">
+            <Ellipse x:Name="PeaoAzul3" Style="{StaticResource OutofBase}"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="408,378.25,0,0" Cursor="Hand">
                 <Ellipse.Effect>
                     <DropShadowEffect/>
                 </Ellipse.Effect>
             </Ellipse>
-            <Ellipse x:Name="PeaoAzul4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,378.25,0,0" Cursor="Hand" IsManipulationEnabled="True">
+            <Ellipse x:Name="PeaoAzul4" Style="{StaticResource OutofBase}"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,378.25,0,0" Cursor="Hand" IsManipulationEnabled="True" MouseLeftButtonDown="PeaoAzul4_MouseLeftButtonDown">
                 <Ellipse.Effect>
                     <DropShadowEffect/>
                 </Ellipse.Effect>
