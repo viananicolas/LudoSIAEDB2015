@@ -17,13 +17,12 @@ namespace Ludo.Model.Entidade
 		private bool jogouSeis;
 		public Acoes proximaAcao = Acoes.Nada;
 
-		public void ComecaJogo(List<Player> Jogadores)
+		public void ComecaJogo(List<Player> Jogadores, List<Peao>PeoesJogo)
 		{
 			this.player = Jogadores;
 			jogouSeis = false;
 			numTurnos = 1;
 			proximaAcao = Acoes.JogarDado;
-			jogouSeis = false;
 			TurnoJogador = this.player[0];
 		}
 		public void EncerrarJogo()

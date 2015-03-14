@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +43,8 @@
     <Compile Include="Entidade\Acoes.cs" />
     <Compile Include="Entidade\Jogo.cs" />
     <Compile Include="Entidade\Peao.cs" />
+    <Compile Include="Entidade\PeaoAmarelo.cs" />
+    <Compile Include="Entidade\PeaoAzul.cs" />
     <Compile Include="Entidade\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

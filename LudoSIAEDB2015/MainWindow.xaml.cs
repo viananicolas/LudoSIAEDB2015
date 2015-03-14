@@ -16,6 +16,8 @@ using System.Windows.Media.Media3D;
 using LudoSIAEDB2015;
 using System.Windows.Media.Animation;
 using Ludo.Model.Entidade;
+using System.Globalization;
+using System.Threading;
 
 namespace LudoSIAEDB2015
 {
@@ -25,7 +27,11 @@ namespace LudoSIAEDB2015
     public partial class MainWindow : Window
     {
 		bool startgame = false;
-		public MainWindow()
+		int turnos=0;
+		int numMovimentos;
+		string currentPOS="22";
+		bool primeirajogada = true;
+        public MainWindow()
         {
             InitializeComponent();
         }
@@ -44,7 +50,7 @@ namespace LudoSIAEDB2015
         private void GirarDado_Click(object sender, RoutedEventArgs e)
         {
             Random rand = new Random();
-            int numMovimentos = rand.Next(1, 7);
+            numMovimentos = rand.Next(1, 7);
             string faceDados = numMovimentos.ToString();
             btnGirarDado.Content = FindResource(faceDados);
             numjogado.Content = faceDados;          
@@ -53,93 +59,132 @@ namespace LudoSIAEDB2015
         private void IniciaJogo_Click(object sender, RoutedEventArgs e)
         {
 			startgame = true;
-
-			/*Storyboard sdf = this.FindResource("MoverPeaoLado") as Storyboard;
-			//Storyboard.SetTargetName(sdf, "PeaoAzul2");
-			sdf.Begin();*/
-
-			/*PointAnimation cookie = new PointAnimation();
-			cookie.From = new Point(-38, 0);
-			cookie.To = new Point(-58, 0);
-			Storyboard.SetTargetName(cookie, "PeaoAzul1");
-			Storyboard.SetTargetProperty(
-				cookie, new PropertyPath(Ellipse.MarginProperty));
-			Storyboard stb = new Storyboard();
-			stb.Children.Add(cookie);*/
-
-
 		
 		}
 
 		private void PeaoAzul1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
+			//Jogo startgame = new Jogo();
 			if (startgame)
 			{
-				Storyboard dsa = this.FindResource("PeaoSairBaseAzul") as Storyboard;
-				Ellipse ell = (Ellipse)sender;
-				//dsa.Stop();
-				var x = ell.Name;
-				dsa.SetValue(Storyboard.TargetNameProperty, x);
-				dsa.Begin();
-				Peao bluepiece = new Peao("Blue", "4");
-				dsa.Completed += Dsa_Completed;
 				
+				Ellipse ell = (Ellipse)sender;
+				PeaoAzul pazul = new PeaoAzul();
+				pazul.PeaoSelecionado = ell;
+				pazul.NaBase = true;
+				Movimentar(pazul, ell);
+				primeirajogada = false;
 			}
-			
-           
         }
 
-        private void Dsa_Completed(object sender, object e)
-        {
-            PeaoAzul1.Margin = new Thickness(497, 309.25, 0, 0);
-            
-        }
+		private void Movimentar(PeaoAzul pazul, Ellipse ell)
+		{
+			if (numMovimentos == 6 && pazul.NaBase)
+			{
+				Tuple<double, double> TempTuple = new Tuple<double, double>(497, 309.25);
+				MovePeca(pazul.PeaoSelecionado, TempTuple);
+				currentPOS = "22";
+				pazul.PeoesBase--;
+			}
+			//if (pazul.NaBase == false)
+				else
+			{
 
-        private void PeaoAzul2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Storyboard dsad = this.FindResource("PeaoSairBaseAzul") as Storyboard;
-            Ellipse ell = (Ellipse)sender;
-           // dsad.Stop();
-            var x = ell.Name;
-            dsad.SetValue(Storyboard.TargetNameProperty, x);
-            dsad.Begin();
+				
+				for (int i = 0; i < numMovimentos; i++)
+				{
+					var y = pazul.Rotas(1, currentPOS, numMovimentos);
+					Tuple<double, double> TempTuple = new Tuple<double, double>(y.Item2, y.Item3);
+					MovePeca(ell, TempTuple);
+					currentPOS = y.Item1;
+				}
 
-			dsad.Completed += Dsad_Completed;
+				pazul.NaBase = false;
+
+				/*for (int i = 0; i <= numMovimentos; i++)
+					MoveUmaPosicao(sender);*/
+			}
 		}
 
-        private void Dsad_Completed(object sender, EventArgs e)
-        {
-            PeaoAzul2.Margin = new Thickness(497, 309.25, 0, 0);
-        }
+		private void MoveUmaPosicao(object sender)
+		{
+			Thread.Sleep(1000);
+			PeaoAzul pazul = new PeaoAzul();
+			Ellipse ell = (Ellipse)sender;
 
-        private void PeaoAzul4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Storyboard dsad = this.FindResource("PeaoSairBaseAzul") as Storyboard;
-            Ellipse ell = (Ellipse)sender;
-           // dsad.Stop();
-            var x = ell.Name;
-            dsad.SetValue(Storyboard.TargetNameProperty, x);
-            dsad.Begin();
-            dsad.Completed += Dsad2_Completed;
-        }
-        private void Dsad2_Completed(object sender, EventArgs e)
-        {
-            PeaoAzul4.Margin = new Thickness(497, 309.25, 0, 0);
-        }
-        /*private void PeoesDeixandoBase()
-{
+			var y = pazul.Rotas(1, currentPOS, numMovimentos);
+			Tuple<double, double> TempTuple = new Tuple<double, double>(y.Item2, y.Item3);
+			MovePeca(ell, TempTuple);
+			currentPOS = y.Item1;
+		}
 
-}*/
-    }
-}
-/*public static Rect GetAbsoltutePlacement(this FrameworkElement element, bool relativeToScreen = false)
-{
-	var absolutePos = element.PointToScreen(new Point(0, 0));
-	if (relativeToScreen)
-	{
-		return new Rect(absolutePos.X, absolutePos.Y, element.ActualWidth, element.ActualHeight);
+
+		private void PeaoAzul2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			/*Ellipse ell = (Ellipse)sender;
+			Peao pazul = new Peao("Azul");
+			var y = pazul.Rotas(1, "45", 6, 497, 309.25);
+			MovePeca(ell, y);*/
+			if (startgame)
+			{
+
+				Ellipse ell = (Ellipse)sender;
+				PeaoAzul pazul = new PeaoAzul();
+				pazul.PeaoSelecionado = ell;
+				pazul.NaBase = true;
+				Movimentar(pazul, ell);
+				primeirajogada = false;
+			}
+		}
+		private void MovePeca(Ellipse sender, Tuple<double, double> route)
+		{
+
+			ThicknessAnimation b = new ThicknessAnimation();
+			b.Duration = TimeSpan.FromSeconds(0.5);
+			b.To = new Thickness(route.Item1, route.Item2, 0, 0);
+
+			Storyboard.SetTarget(b, sender);
+			Storyboard.SetTargetProperty(b, new PropertyPath(Ellipse.MarginProperty));
+			Storyboard tentando = new Storyboard();
+			tentando.Children.Add(b);
+			tentando.Begin();
+		}
+
+		private void PeaoAzul4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+			/*Ellipse ell = (Ellipse)sender;
+			Peao pazul = new Peao("Azul");
+			var y = pazul.Rotas(1, "45", 6, 497, 309.25);
+			MovePeca(ell, y);*/
+			if (startgame)
+			{
+
+				Ellipse ell = (Ellipse)sender;
+				PeaoAzul pazul = new PeaoAzul();
+				pazul.PeaoSelecionado = ell;
+				pazul.NaBase = true;
+				Movimentar(pazul, ell);
+				primeirajogada = false;
+			}
+		}
+
+		private void PeaoAzul3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			/*Ellipse ell = (Ellipse)sender;
+			Peao pazul = new Peao("Azul");
+			var y = pazul.Rotas(1, "45", 6, 497, 309.25);
+			MovePeca(ell, y);*/
+			if (startgame)
+			{
+
+				Ellipse ell = (Ellipse)sender;
+				PeaoAzul pazul = new PeaoAzul();
+				pazul.PeaoSelecionado = ell;
+				pazul.NaBase = true;
+				Movimentar(pazul, ell);
+				primeirajogada = false;
+			}
+		}
+	
 	}
-	var posMW = Application.Current.MainWindow.PointToScreen(new Point(0, 0));
-	absolutePos = new Point(absolutePos.X - posMW.X, absolutePos.Y - posMW.Y);
-	return new Rect(absolutePos.X, absolutePos.Y, element.ActualWidth, element.ActualHeight);
-}*/
+}
