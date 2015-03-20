@@ -45,6 +45,7 @@
     <Compile Include="Entidade\Peao.cs" />
     <Compile Include="Entidade\PeaoAmarelo.cs" />
     <Compile Include="Entidade\PeaoAzul.cs" />
+    <Compile Include="Entidade\PeaoVermelho.cs" />
     <Compile Include="Entidade\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

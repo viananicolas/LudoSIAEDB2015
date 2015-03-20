@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Shapes;
 
 namespace Ludo.Model.Entidade
 {
-	public class PeaoAzul : Peao
+	public class PeaoVermelho :Peao
 	{
 		public Tuple<int, string, double, double> Rotas(int posicaoindex, string posicaoquadrado, int numsorteado)
 		{
 
 
 			var RotasAzuis = new List<Tuple<string, double, double>>();
+			RotasAzuis.Add(Tuple.Create("57", Convert.ToDouble(312), Convert.ToDouble(42.25)));
+			RotasAzuis.Add(Tuple.Create("60", Convert.ToDouble(312), Convert.ToDouble(80.25)));
+			RotasAzuis.Add(Tuple.Create("63", Convert.ToDouble(312), Convert.ToDouble(115.25)));
+			RotasAzuis.Add(Tuple.Create("66", Convert.ToDouble(312), Convert.ToDouble(152.25)));
+			RotasAzuis.Add(Tuple.Create("69", Convert.ToDouble(312), Convert.ToDouble(190.25)));
+			RotasAzuis.Add(Tuple.Create("33", Convert.ToDouble(351), Convert.ToDouble(230.25)));
+			RotasAzuis.Add(Tuple.Create("30", Convert.ToDouble(387), Convert.ToDouble(230.25)));
+			RotasAzuis.Add(Tuple.Create("27", Convert.ToDouble(424), Convert.ToDouble(230.25)));
+			RotasAzuis.Add(Tuple.Create("24", Convert.ToDouble(462), Convert.ToDouble(230.25)));
+			RotasAzuis.Add(Tuple.Create("21", Convert.ToDouble(497), Convert.ToDouble(230.25)));
+			RotasAzuis.Add(Tuple.Create("20", Convert.ToDouble(535), Convert.ToDouble(230.25)));
+			RotasAzuis.Add(Tuple.Create("19", Convert.ToDouble(535), Convert.ToDouble(270.25)));
+			RotasAzuis.Add(Tuple.Create("18", Convert.ToDouble(535), Convert.ToDouble(309.25)));
 			RotasAzuis.Add(Tuple.Create("22", Convert.ToDouble(497), Convert.ToDouble(309.25)));
 			RotasAzuis.Add(Tuple.Create("26", Convert.ToDouble(462), Convert.ToDouble(309.25)));
 			RotasAzuis.Add(Tuple.Create("29", Convert.ToDouble(424), Convert.ToDouble(309.25)));
@@ -53,28 +65,16 @@ namespace Ludo.Model.Entidade
 			RotasAzuis.Add(Tuple.Create("56", Convert.ToDouble(231), Convert.ToDouble(7.25)));
 			RotasAzuis.Add(Tuple.Create("55", Convert.ToDouble(271), Convert.ToDouble(7.25)));
 			RotasAzuis.Add(Tuple.Create("54", Convert.ToDouble(312), Convert.ToDouble(7.25)));
-			RotasAzuis.Add(Tuple.Create("57", Convert.ToDouble(312), Convert.ToDouble(42.25)));
-			RotasAzuis.Add(Tuple.Create("60", Convert.ToDouble(312), Convert.ToDouble(80.25)));
-			RotasAzuis.Add(Tuple.Create("63", Convert.ToDouble(312), Convert.ToDouble(115.25)));
-			RotasAzuis.Add(Tuple.Create("66", Convert.ToDouble(312), Convert.ToDouble(152.25)));
-			RotasAzuis.Add(Tuple.Create("69", Convert.ToDouble(312), Convert.ToDouble(190.25)));
-			RotasAzuis.Add(Tuple.Create("33", Convert.ToDouble(351), Convert.ToDouble(230.25)));
-			RotasAzuis.Add(Tuple.Create("30", Convert.ToDouble(387), Convert.ToDouble(230.25)));
-			RotasAzuis.Add(Tuple.Create("27", Convert.ToDouble(424), Convert.ToDouble(230.25)));
-			RotasAzuis.Add(Tuple.Create("24", Convert.ToDouble(462), Convert.ToDouble(230.25)));
-			RotasAzuis.Add(Tuple.Create("21", Convert.ToDouble(497), Convert.ToDouble(230.25)));
-			RotasAzuis.Add(Tuple.Create("20", Convert.ToDouble(535), Convert.ToDouble(230.25)));
-			RotasAzuis.Add(Tuple.Create("19", Convert.ToDouble(535), Convert.ToDouble(270.25)));
-			RotasAzuis.Add(Tuple.Create("18", Convert.ToDouble(535), Convert.ToDouble(309.25)));
+
 			//Reta Final
 			//var RotasAzuisFinal = new List<Tuple<string, double, double>>();
-			RotasAzuis.Add(Tuple.Create("22F", Convert.ToDouble(497), Convert.ToDouble(309.25)));
-			RotasAzuis.Add(Tuple.Create("23", Convert.ToDouble(500), Convert.ToDouble(270.25)));
-			RotasAzuis.Add(Tuple.Create("25", Convert.ToDouble(462), Convert.ToDouble(270.25)));
-			RotasAzuis.Add(Tuple.Create("28", Convert.ToDouble(425), Convert.ToDouble(270.25)));
-			RotasAzuis.Add(Tuple.Create("31", Convert.ToDouble(388), Convert.ToDouble(270.25)));
-			RotasAzuis.Add(Tuple.Create("34", Convert.ToDouble(351), Convert.ToDouble(270.25)));
-			RotasAzuis.Add(Tuple.Create("FinalBlue", Convert.ToDouble(314), Convert.ToDouble(270.25)));
+			RotasAzuis.Add(Tuple.Create("57F", Convert.ToDouble(312), Convert.ToDouble(42.25)));
+			RotasAzuis.Add(Tuple.Create("58", Convert.ToDouble(270), Convert.ToDouble(42.25)));
+			RotasAzuis.Add(Tuple.Create("61", Convert.ToDouble(270), Convert.ToDouble(78)));
+			RotasAzuis.Add(Tuple.Create("64", Convert.ToDouble(270), Convert.ToDouble(113)));
+			RotasAzuis.Add(Tuple.Create("67", Convert.ToDouble(270), Convert.ToDouble(152)));
+			RotasAzuis.Add(Tuple.Create("70", Convert.ToDouble(270), Convert.ToDouble(190)));
+			RotasAzuis.Add(Tuple.Create("FinalRed", Convert.ToDouble(270), Convert.ToDouble(226)));
 			int z = 0;
 			string c = null;
 			bool encontrou = false;
@@ -102,7 +102,7 @@ namespace Ludo.Model.Entidade
 					encontrou = true;
 					break;
 					//}
-					if (posicaoquadrado == "FinalBlue")
+					if (posicaoquadrado == "FinalRed")
 					{
 						encontrou = true;
 						break;
@@ -120,6 +120,5 @@ namespace Ludo.Model.Entidade
 			else
 				goto Verificar;
 		}
-
 	}
 }
