@@ -30,13 +30,17 @@ namespace LudoSIAEDB2015
 		int turnos = 0;
 		int numMovimentos;
 		string currentPOS = "22";
+		string vez;
 		bool primeirajogada = true;
 		int pecasrestantes = 59;
 		List<PeaoAzul> InicializarPecasAzuis = new List<Ludo.Model.Entidade.PeaoAzul>();
 		List<PeaoAmarelo> InicializarPecasAmarelas = new List<Ludo.Model.Entidade.PeaoAmarelo>();
-		/*List<PeaoVerde> InicializarPecasVerdes = new List<Ludo.Model.Entidade.PeaoVerde>();*/
+		List<PeaoVerde> InicializarPecasVerdes = new List<Ludo.Model.Entidade.PeaoVerde>();
 		List<PeaoVermelho> InicializarPecasVermelhas = new List<Ludo.Model.Entidade.PeaoVermelho>();
 		PeaoAzul pazul = new PeaoAzul();
+		PeaoAmarelo pamarelo = new PeaoAmarelo();
+		PeaoVerde pverde = new PeaoVerde();
+		PeaoVermelho pvermelho = new PeaoVermelho();
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -73,7 +77,10 @@ namespace LudoSIAEDB2015
 				else
 					InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = true;
 				if (InicializarPecasAzuis[0].CurrentPOS == "FinalBlue")
+				{
 					InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = false;
+					pazul.PeoesChegada++;
+				}
 			}
 			if ((InicializarPecasAzuis[1].Index >= 53) && (InicializarPecasAzuis[1].Index <= 59))
 			{
@@ -82,7 +89,10 @@ namespace LudoSIAEDB2015
 				else
 					InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = true;
 				if (InicializarPecasAzuis[1].CurrentPOS == "FinalBlue")
+				{
 					InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = false;
+					pazul.PeoesChegada++;
+				}
 			}
 			if ((InicializarPecasAzuis[2].Index >= 53) && (InicializarPecasAzuis[2].Index <= 59))
 			{
@@ -91,7 +101,10 @@ namespace LudoSIAEDB2015
 				else
 					InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = true;
 				if (InicializarPecasAzuis[2].CurrentPOS == "FinalBlue")
+				{
 					InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = false;
+					pazul.PeoesChegada++;
+				}
 			}
 			if ((InicializarPecasAzuis[3].Index >= 53) && (InicializarPecasAzuis[3].Index <= 59))
 			{
@@ -100,7 +113,10 @@ namespace LudoSIAEDB2015
 				else
 					InicializarPecasAzuis[3].PeaoSelecionado.IsEnabled = true;
 				if (InicializarPecasAzuis[3].CurrentPOS == "FinalBlue")
+				{
 					InicializarPecasAzuis[3].PeaoSelecionado.IsEnabled = false;
+					pazul.PeoesChegada++;
+				}
 			}
 
 
@@ -113,7 +129,10 @@ namespace LudoSIAEDB2015
 				else
 					InicializarPecasAmarelas[0].PeaoSelecionado.IsEnabled = true;
 				if (InicializarPecasAmarelas[0].CurrentPOS == "FinalYellow")
+				{
 					InicializarPecasAmarelas[0].PeaoSelecionado.IsEnabled = false;
+					pamarelo.PeoesChegada++;
+				}
 			}
 			if ((InicializarPecasAmarelas[1].Index >= 53) && (InicializarPecasAmarelas[1].Index <= 59))
 			{
@@ -122,7 +141,10 @@ namespace LudoSIAEDB2015
 				else
 					InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = true;
 				if (InicializarPecasAmarelas[1].CurrentPOS == "FinalYellow")
+				{
 					InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = false;
+					pamarelo.PeoesChegada++;
+				}
 			}
 			if ((InicializarPecasAmarelas[2].Index >= 53) && (InicializarPecasAmarelas[2].Index <= 59))
 			{
@@ -131,7 +153,10 @@ namespace LudoSIAEDB2015
 				else
 					InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = true;
 				if (InicializarPecasAmarelas[2].CurrentPOS == "FinalYellow")
+				{
 					InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = false;
+					pamarelo.PeoesChegada++;
+				}
 			}
 			if ((InicializarPecasAmarelas[3].Index >= 53) && (InicializarPecasAmarelas[3].Index <= 59))
 			{
@@ -140,55 +165,133 @@ namespace LudoSIAEDB2015
 				else
 					InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = true;
 				if (InicializarPecasAmarelas[3].CurrentPOS == "FinalYellow")
+				{
 					InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = false;
+					pamarelo.PeoesChegada++;
+				}
+			}
+
+			//658866868
+
+			if (btnPlayer1.IsChecked == false)
+			{
+				if ((InicializarPecasVermelhas[0].Index >= 53) && (InicializarPecasVermelhas[0].Index <= 59))
+				{
+					if (numMovimentos > InicializarPecasVermelhas[0].JogadasRestantes)
+						InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = false;
+					else
+						InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = true;
+					if (InicializarPecasVermelhas[0].CurrentPOS == "FinalRed")
+					{
+						InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = false;
+						pvermelho.PeoesChegada++;
+					}
+				}
+				if ((InicializarPecasVermelhas[1].Index >= 53) && (InicializarPecasVermelhas[1].Index <= 59))
+				{
+					if (numMovimentos > InicializarPecasVermelhas[1].JogadasRestantes)
+						InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = false;
+					else
+						InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = true;
+					if (InicializarPecasVermelhas[1].CurrentPOS == "FinalRed")
+					{
+						InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = false;
+						pvermelho.PeoesChegada++;
+					}
+				}
+				if ((InicializarPecasVermelhas[2].Index >= 53) && (InicializarPecasVermelhas[2].Index <= 59))
+				{
+					if (numMovimentos > InicializarPecasVermelhas[2].JogadasRestantes)
+						InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = false;
+					else
+						InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = true;
+					if (InicializarPecasVermelhas[2].CurrentPOS == "FinalRed")
+					{
+						InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = false;
+						pvermelho.PeoesChegada++;
+					}
+				}
+				if ((InicializarPecasVermelhas[3].Index >= 53) && (InicializarPecasVermelhas[3].Index <= 59))
+				{
+					if (numMovimentos > InicializarPecasVermelhas[3].JogadasRestantes)
+						InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = false;
+					else
+						InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = true;
+					if (InicializarPecasVermelhas[3].CurrentPOS == "FinalRed")
+					{
+						InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = false;
+						pvermelho.PeoesChegada++;
+					}
+				}
+			}
+			else
+			{
+				PeaoVermelho1.IsEnabled = false;
+				PeaoVermelho2.IsEnabled = false;
+				PeaoVermelho3.IsEnabled = false;
+				PeaoVermelho4.IsEnabled = false;
+
 			}
 
 			//658866868
 
 
-			if ((InicializarPecasVermelhas[0].Index >= 53) && (InicializarPecasVermelhas[0].Index <= 59))
+			if ((InicializarPecasVerdes[0].Index >= 53) && (InicializarPecasVerdes[0].Index <= 59))
 			{
-				if (numMovimentos > InicializarPecasVermelhas[0].JogadasRestantes)
-					InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = false;
+				if (numMovimentos > InicializarPecasVerdes[0].JogadasRestantes)
+					InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = false;
 				else
-					InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = true;
-				if (InicializarPecasVermelhas[0].CurrentPOS == "FinalRed")
-					InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = false;
+					InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = true;
+				if (InicializarPecasVerdes[0].CurrentPOS == "FinalGreen")
+				{
+					InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = false;
+					pverde.PeoesChegada++;
+				}
 			}
-			if ((InicializarPecasVermelhas[1].Index >= 53) && (InicializarPecasVermelhas[1].Index <= 59))
+			if ((InicializarPecasVerdes[1].Index >= 53) && (InicializarPecasVerdes[1].Index <= 59))
 			{
-				if (numMovimentos > InicializarPecasVermelhas[1].JogadasRestantes)
-					InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = false;
+				if (numMovimentos > InicializarPecasVerdes[1].JogadasRestantes)
+					InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = false;
 				else
-					InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = true;
-				if (InicializarPecasVermelhas[1].CurrentPOS == "FinalRed")
-					InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = false;
+					InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = true;
+				if (InicializarPecasVerdes[1].CurrentPOS == "FinalGreen")
+				{
+					InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = false;
+					pverde.PeoesChegada++;
+				}
 			}
-			if ((InicializarPecasVermelhas[2].Index >= 53) && (InicializarPecasVermelhas[2].Index <= 59))
+			if ((InicializarPecasVerdes[2].Index >= 53) && (InicializarPecasVerdes[2].Index <= 59))
 			{
-				if (numMovimentos > InicializarPecasVermelhas[2].JogadasRestantes)
-					InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = false;
+				if (numMovimentos > InicializarPecasVerdes[2].JogadasRestantes)
+					InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = false;
 				else
-					InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = true;
-				if (InicializarPecasVermelhas[2].CurrentPOS == "FinalRed")
-					InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = false;
+					InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = true;
+				if (InicializarPecasVerdes[2].CurrentPOS == "FinalGreen")
+				{
+					InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = false;
+					pverde.PeoesChegada++;
+				}
 			}
-			if ((InicializarPecasVermelhas[3].Index >= 53) && (InicializarPecasVermelhas[3].Index <= 59))
+			if ((InicializarPecasVerdes[3].Index >= 53) && (InicializarPecasVerdes[3].Index <= 59))
 			{
-				if (numMovimentos > InicializarPecasVermelhas[3].JogadasRestantes)
-					InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = false;
+				if (numMovimentos > InicializarPecasVerdes[3].JogadasRestantes)
+					InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = false;
 				else
-					InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = true;
-				if (InicializarPecasVermelhas[3].CurrentPOS == "FinalRed")
-					InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = false;
+					InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = true;
+				if (InicializarPecasVerdes[3].CurrentPOS == "FinalGreen")
+				{
+					InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = false;
+					pverde.PeoesChegada++;
+				}
 			}
-
+			btnGirarDado.IsEnabled = false;
 		}
 
 
 		private void IniciaJogo_Click(object sender, RoutedEventArgs e)
 		{
-			if (((string)btnPlayer1.Content == "Jogador 1") || ((string)btnPlayer1.Content == "CPU 1"))
+			//if (((string)btnPlayer1.Content == "Jogador 1") || ((string)btnPlayer1.Content == "CPU 1"))
+			if(btnPlayer1.IsChecked == false)
 			{
 				PeaoVermelho pvermelha1 = new PeaoVermelho();
 				pvermelha1.PeaoSelecionado = PeaoVermelho1;
@@ -206,6 +309,25 @@ namespace LudoSIAEDB2015
 				InicializarPecasVermelhas.Add(pvermelha2);
 				InicializarPecasVermelhas.Add(pvermelha3);
 				InicializarPecasVermelhas.Add(pvermelha4);
+			}
+			if (((string)btnPlayer2.Content == "Jogador 2") || ((string)btnPlayer2.Content == "CPU 2"))
+			{
+				PeaoVerde pverde1 = new PeaoVerde();
+				pverde1.PeaoSelecionado = PeaoVerde1;
+				pverde1.NaBase = true;
+				PeaoVerde pverde2 = new PeaoVerde();
+				pverde2.PeaoSelecionado = PeaoVerde2;
+				pverde2.NaBase = true;
+				PeaoVerde pverde3 = new PeaoVerde();
+				pverde3.PeaoSelecionado = PeaoVerde3;
+				pverde3.NaBase = true;
+				PeaoVerde pverde4 = new PeaoVerde();
+				pverde4.PeaoSelecionado = PeaoVerde4;
+				pverde4.NaBase = true;
+				InicializarPecasVerdes.Add(pverde1);
+				InicializarPecasVerdes.Add(pverde2);
+				InicializarPecasVerdes.Add(pverde3);
+				InicializarPecasVerdes.Add(pverde4);
 			}
 			if (((string)btnPlayer3.Content == "Jogador 3") || ((string)btnPlayer3.Content == "CPU 3"))
 			{
@@ -252,6 +374,7 @@ namespace LudoSIAEDB2015
 
 			startgame = true;
 			btnGirarDado.IsEnabled = true;
+			btnIniciaJogo.IsEnabled = false;
 			//Jogo();
 		}
 		private void Jogo()
@@ -264,12 +387,37 @@ namespace LudoSIAEDB2015
 			InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = false;
 			InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = false;
 			InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = false;
-			string Jogador="Blue";
-			while (startgame)
+			string Jogador="Red";
+			if (startgame)
 			{
 				switch (Jogador)
 				{
+					case "Red":
+						InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = true;
+				
+						lblVezJogador.Content = "Agora é a vez do Jogador 1";
+						Jogador = "Green";
+						break;
+					case "Green":
+						InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = true;
+						
+						lblVezJogador.Content = "Agora é a vez do Jogador 2";
+						break;
+					case "Yellow":
+						InicializarPecasAmarelas[0].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = true;
+						InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = true;
+						lblVezJogador.Content = "Agora é a vez do Jogador 3";
+						break;
 					case "Blue":
+						Again:
 						InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = true;
 						InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = true;
 						InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = true;
@@ -277,17 +425,29 @@ namespace LudoSIAEDB2015
 						lblVezJogador.Content = "Agora é a vez do Jogador 4";
 					//	if(InicializarPecasAzuis[0].CurrentPOS)
                         break;
-					case "Yellow":
-						InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = true;
-						InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = true;
-						InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = true;
-						InicializarPecasAzuis[3].PeaoSelecionado.IsEnabled = true;
-						lblVezJogador.Content = "Agora é a vez do Jogador 3";
-						break;
 					default:
+						if (pazul.PeoesChegada == 4)
+						{
+							lblVezJogador.Content = "Jogador 4 Venceu!";
+							startgame = false;
+						}
+						if (pverde.PeoesChegada == 4)
+						{
+							lblVezJogador.Content = "Jogador 2 Venceu!";
+							startgame = false;
+						}
+						if (pvermelho.PeoesChegada == 4)
+						{
+							lblVezJogador.Content = "Jogador 1 Venceu!";
+							startgame = false;
+						}
+						if (pamarelo.PeoesChegada == 4)
+						{
+							lblVezJogador.Content = "Jogador 3 Venceu!";
+							startgame = false;
+						}
 						break;
 				}
-				startgame = false;
 			}
 		}
 
@@ -298,6 +458,7 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasAzuis[0], p1);
 				primeirajogada = false;
+				vez = "Blue";
 			}
 		}
 
@@ -328,7 +489,33 @@ namespace LudoSIAEDB2015
 			}
 			pazul.NaBase = false;
 		}
-
+		private void Movimentar(PeaoVerde pverde, Ellipse ell)
+		{
+			if (numMovimentos == 6 && pverde.NaBase)
+			{
+				Tuple<double, double> TempTuple = new Tuple<double, double>(45, 230.25);
+				MovePeca(pverde.PeaoSelecionado, TempTuple);
+				pverde.CurrentPOS = "3";
+				pverde.PeoesBase--;
+			}
+			if (pverde.NaBase == false)
+			//else
+			{
+				for (int i = 0; i < numMovimentos; i++)
+				{
+					pecasrestantes--;
+					var y = pverde.Rotas(1, pverde.CurrentPOS, numMovimentos);
+					Tuple<double, double> TempTuple = new Tuple<double, double>(y.Item3, y.Item4);
+					MovePeca(ell, TempTuple);
+					pverde.Index = y.Item1;
+					pverde.CurrentPOS = y.Item2;
+					pverde.JogadasRestantes--;
+					if (pverde.CurrentPOS == "FinalGreen")
+						ell.IsEnabled = false;
+				}
+			}
+			pverde.NaBase = false;
+		}
 		private void Movimentar(PeaoAmarelo pamarelo, Ellipse ell)
 		{
 			if (numMovimentos == 6 && pamarelo.NaBase)
@@ -406,6 +593,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasAzuis[1], p1);
 				primeirajogada = false;
+				vez = "Blue";
+				Rodada(vez);
 			}
 		}
 		private void MovePeca(Ellipse sender, Tuple<double, double> route)
@@ -429,6 +618,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasAzuis[3], p1);
 				primeirajogada = false;
+				vez = "Blue";
+				Rodada(vez);
 			}
 		}
 
@@ -439,6 +630,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasAmarelas[1], p1);
 				primeirajogada = false;
+				vez = "Yellow";
+				Rodada(vez);
 			}
 		}
 
@@ -449,6 +642,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasAzuis[2], p1);
 				primeirajogada = false;
+				vez = "Blue";
+				Rodada(vez);
 			}
 		}
 
@@ -459,6 +654,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasAmarelas[0], p1);
 				primeirajogada = false;
+				vez = "Yellow";
+				Rodada(vez);
 			}
 		}
 
@@ -469,6 +666,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasAmarelas[2], p1);
 				primeirajogada = false;
+				vez = "Yellow";
+				Rodada(vez);
 			}
 
 		}
@@ -480,6 +679,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasAmarelas[3], p1);
 				primeirajogada = false;
+				vez = "Yellow";
+				Rodada(vez);
 			}
 		}
 
@@ -490,6 +691,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasVermelhas[1], p1);
 				primeirajogada = false;
+				vez = "Red";
+				Rodada(vez);
 			}
 		}
 
@@ -500,6 +703,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasVermelhas[0], p1);
 				primeirajogada = false;
+				vez = "Red";
+				Rodada(vez);
 			}
 		}
 
@@ -510,6 +715,8 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasVermelhas[3], p1);
 				primeirajogada = false;
+				vez = "Red";
+				Rodada(vez);
 			}
 		}
 
@@ -520,7 +727,216 @@ namespace LudoSIAEDB2015
 			{
 				Movimentar(InicializarPecasVermelhas[2], p1);
 				primeirajogada = false;
+				vez = "Red";
+				Rodada(vez);
 			}
+		}
+
+		private void PeaoVerde3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			var p1 = InicializarPecasVerdes[2].PeaoSelecionado;
+			if (startgame)
+			{
+				Movimentar(InicializarPecasVerdes[2], p1);
+				primeirajogada = false;
+				vez = "Green";
+				Rodada(vez);
+			}
+		}
+
+		private void PeaoVerde4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			var p1 = InicializarPecasVerdes[3].PeaoSelecionado;
+			if (startgame)
+			{
+				Movimentar(InicializarPecasVerdes[3], p1);
+				primeirajogada = false;
+				vez = "Green";
+				Rodada(vez);
+			}
+		}
+
+		private void PeaoVerde1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			var p1 = InicializarPecasVerdes[0].PeaoSelecionado;
+			if (startgame)
+			{
+				Movimentar(InicializarPecasVerdes[0], p1);
+				primeirajogada = false;
+				vez = "Green";
+				Rodada(vez);
+			}
+		}
+
+		private void PeaoVerde2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			var p1 = InicializarPecasVerdes[1].PeaoSelecionado;
+			if (startgame)
+			{
+				Movimentar(InicializarPecasVerdes[1], p1);
+				primeirajogada = false;
+				vez = "Green";
+				Rodada(vez);
+			}
+		}
+		private void Rodada(string turn)
+		{
+			if (turn == "Blue")
+                {
+				turnos++;
+				lblnumTurnos.Content = turnos.ToString();
+				lblVezJogador.Content = "Agora é a vez do Jogador Vermelho";
+				InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = true;
+
+				InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasAmarelas[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = false;
+				btnGirarDado.IsEnabled = true;
+
+			}
+			if (turn == "Red")
+			{
+				turnos++;
+				lblnumTurnos.Content = turnos.ToString();
+				lblVezJogador.Content = "Agora é a vez do Jogador Verde";
+				InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = true;
+
+				InicializarPecasAmarelas[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = false;
+				btnGirarDado.IsEnabled = true;
+
+			}
+			if (turn == "Green")
+			{
+				turnos++;
+				lblnumTurnos.Content = turnos.ToString();
+				lblVezJogador.Content = "Agora é a vez do Jogador Amarelo";
+
+				InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAzuis[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasAmarelas[0].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = true;
+				btnGirarDado.IsEnabled = true;
+
+			}
+			if (turn == "Yellow")
+			{
+				turnos++;
+				lblnumTurnos.Content = turnos.ToString();
+				lblVezJogador.Content = "Agora é a vez do Jogador Azul";
+
+				InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = true;
+				InicializarPecasAzuis[3].PeaoSelecionado.IsEnabled = true;
+
+				InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = false;
+
+				InicializarPecasAmarelas[0].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = false;
+				InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = false;
+				btnGirarDado.IsEnabled = true;
+
+			}
+			if (pazul.PeoesChegada == 4)
+			{
+				lblVezJogador.Content = "Jogador Azul Venceu!";
+				startgame = false;
+				DesativaPecas();
+            }
+			if (pverde.PeoesChegada == 4)
+			{
+				lblVezJogador.Content = "Jogador Verde Venceu!";
+				startgame = false;
+				DesativaPecas();
+			}
+			if (pvermelho.PeoesChegada == 4)
+			{
+				lblVezJogador.Content = "Jogador Vermelho Venceu!";
+				startgame = false;
+				DesativaPecas();
+			}
+			if (pamarelo.PeoesChegada == 4)
+			{
+				lblVezJogador.Content = "Jogador Amarelo Venceu!";
+				startgame = false;
+				DesativaPecas();
+			}
+		}
+		private void DesativaPecas()
+		{
+			InicializarPecasAzuis[0].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasAzuis[1].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasAzuis[2].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasAzuis[3].PeaoSelecionado.IsEnabled = false;
+
+			InicializarPecasVermelhas[0].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasVermelhas[1].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasVermelhas[2].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasVermelhas[3].PeaoSelecionado.IsEnabled = false;
+
+			InicializarPecasVerdes[0].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasVerdes[1].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasVerdes[2].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasVerdes[3].PeaoSelecionado.IsEnabled = false;
+
+			InicializarPecasAmarelas[0].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasAmarelas[1].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasAmarelas[2].PeaoSelecionado.IsEnabled = false;
+			InicializarPecasAmarelas[3].PeaoSelecionado.IsEnabled = false;
 		}
 	}
 }

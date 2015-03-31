@@ -362,8 +362,8 @@
 			<!--COLOCAR CANVAS AO INVÉS DE UM GRID-->
 			<Grid HorizontalAlignment="Left" Height="595.333" Margin="568,4.332,-173,-4.332" VerticalAlignment="Top" Width="358">
 
-				<Label Content="Turnos:" HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
-				<Label x:Name="lblnumTurnos" Content="#" HorizontalAlignment="Left" Margin="125.603,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667"/>
+				<Label Content="Turnos:" HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667" Foreground="White"/>
+				<Label x:Name="lblnumTurnos" Content="#" HorizontalAlignment="Left" Margin="125.603,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667" Foreground="White"/>
 				<Button x:Name="btnIniciaJogo" Content="Iniciar jogo" HorizontalAlignment="Left" Margin="31,366,0,0" VerticalAlignment="Top" Width="100" Height="71" Click="IniciaJogo_Click"/>
 				<ToggleButton x:Name="btnPlayer1" Content="Jogador 1" HorizontalAlignment="Left" Height="33" Margin="31,104,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Red" BorderBrush="White" BorderThickness="1" Style="{DynamicResource ToggleButtonStyle1}"/>
 				<ToggleButton x:Name="btnPlayer2" Content="Jogador 2" HorizontalAlignment="Left" Height="33" Margin="31,161,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Green" Style="{DynamicResource ToggleButtonStyle2}"/>
@@ -375,7 +375,7 @@
 					</Button.Effect>
 				</Button>
 				<Label x:Name="numjogado" Content="Label" HorizontalAlignment="Left" Margin="235,313,0,0" VerticalAlignment="Top"/>
-				<Label x:Name="lblVezJogador" Content="Label" HorizontalAlignment="Left" Margin="44,61,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+				<Label x:Name="lblVezJogador" Content="Label" HorizontalAlignment="Left" Margin="44,61,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White"/>
 			</Grid>
 			<Ellipse x:Name="BaseVermelha" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Height="197.668" Canvas.Left="10" Stroke="Red" StrokeThickness="10" Canvas.Top="10" Width="202.083" Margin="355,10,196,388"/>
 			<Ellipse x:Name="PeaoVermelho1" HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="63" Canvas.Top="147.25" Cursor="Hand" Margin="478,37,0,0" MouseLeftButtonDown="PeaoVermelho1_MouseLeftButtonDown">
@@ -400,22 +400,22 @@
 			</Ellipse>
 
 			<Ellipse x:Name="BaseVerde" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Green" StrokeThickness="10" Margin="10,10,540.917,387.665"/>
-			<Ellipse x:Name="PeaoVerde1" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="63,147.25,0,0" Cursor="Hand">
+			<Ellipse x:Name="PeaoVerde1" HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="26" Fill="Green" Margin="63,147,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde1_MouseLeftButtonDown">
 				<Ellipse.Effect>
 					<DropShadowEffect/>
 				</Ellipse.Effect>
 			</Ellipse>
-			<Ellipse x:Name="PeaoVerde2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,147.25,0,0" Cursor="Hand">
+			<Ellipse x:Name="PeaoVerde2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,147.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde2_MouseLeftButtonDown">
 				<Ellipse.Effect>
 					<DropShadowEffect/>
 				</Ellipse.Effect>
 			</Ellipse>
-			<Ellipse x:Name="PeaoVerde3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="63,36.25,0,0" Cursor="Hand">
+			<Ellipse x:Name="PeaoVerde3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="63,36.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde3_MouseLeftButtonDown">
 				<Ellipse.Effect>
 					<DropShadowEffect/>
 				</Ellipse.Effect>
 			</Ellipse>
-			<Ellipse x:Name="PeaoVerde4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,36.25,0,0" Cursor="Hand">
+			<Ellipse x:Name="PeaoVerde4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,36.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde4_MouseLeftButtonDown">
 				<Ellipse.Effect>
 					<DropShadowEffect/>
 				</Ellipse.Effect>
