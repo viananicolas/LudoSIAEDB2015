@@ -4,30 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" mc:Ignorable="d" x:Class="LudoSIAEDB2015.MainWindow"
         Title="LUDO" Height="623.811" Width="934" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Opacity="0.995" FontFamily="Segoe UI" TextOptions.TextFormattingMode="Display" Icon="icon_148_ludo.ico">
 
-	<Window.Resources>
-		<Storyboard x:Key="OnChecked1"/>
-		<!--<Storyboard x:Key="PeaoSairBaseAzul" >
+    <Window.Resources>
+        <Storyboard x:Key="OnChecked1"/>
+        <!--<Storyboard x:Key="PeaoSairBaseAzul" >
 			<ThicknessAnimationUsingKeyFrames x:Name="LeaveBase" Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
 				
 				<SplineThicknessKeyFrame x:Name="Destino" x:Uid="666" KeyTime="00:00:01" Value="312,385.25,0,0" >
 					-->
-		<!--Value="535,270.25,0,0"-->
-		<!--
+        <!--Value="535,270.25,0,0"-->
+        <!--
 
 				</SplineThicknessKeyFrame>
 			</ThicknessAnimationUsingKeyFrames>
 		</Storyboard>-->
-		<Style TargetType="Ellipse" x:Key="OutofBase">
-			<Setter Property="RenderTransform">
-				<Setter.Value>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Setter.Value>
-				<!--  <Ellipse.RenderTransform>
+        <Style TargetType="Ellipse" x:Key="OutofBase">
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Setter.Value>
+                <!--  <Ellipse.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
@@ -35,17 +35,17 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Ellipse.RenderTransform>-->
-			</Setter>
-			<Setter Property="Margin" Value="{DynamicResource PeaoSairBaseAzul}">
-			</Setter>
-		</Style>
-		<Image x:Key="1" Source="1.png" Height="80" Width="80" />
-		<Image x:Key="2" Source="2.png" Height="80" Width="80" />
-		<Image x:Key="3" Source="3.png" Height="80" Width="80" />
-		<Image x:Key="4" Source="4.png" Height="80" Width="80" />
-		<Image x:Key="5" Source="5.png" Height="80" Width="80" />
-		<Image x:Key="6" Source="6.png" Height="80" Width="80" />
-		<!--<Style TargetType="Ellipse" x:Key="MoveLeft">
+            </Setter>
+            <Setter Property="Margin" Value="{DynamicResource PeaoSairBaseAzul}">
+            </Setter>
+        </Style>
+        <Image x:Key="1" Source="1.png" Height="80" Width="80" />
+        <Image x:Key="2" Source="2.png" Height="80" Width="80" />
+        <Image x:Key="3" Source="3.png" Height="80" Width="80" />
+        <Image x:Key="4" Source="4.png" Height="80" Width="80" />
+        <Image x:Key="5" Source="5.png" Height="80" Width="80" />
+        <Image x:Key="6" Source="6.png" Height="80" Width="80" />
+        <!--<Style TargetType="Ellipse" x:Key="MoveLeft">
             <Setter Property="RenderTransform">
                 <Setter.Value>
                     <TransformGroup>
@@ -64,90 +64,465 @@
     
      
         </Style>-->
-		<Storyboard x:Key="PeaoMoverCima">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="PeaoAzul1">
-				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-179"/>
-			</DoubleAnimationUsingKeyFrames>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="PeaoAzul1">
-				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="90" />
-			</DoubleAnimationUsingKeyFrames>
-		</Storyboard>
-		<Storyboard x:Key="MoverPeaoLado" RepeatBehavior="1x">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="PeaoAzul1">
-				<EasingDoubleKeyFrame x:Name="PeaoMovimentoX" KeyTime="0:0:0.6" Value="-38"/>
-			</DoubleAnimationUsingKeyFrames>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="PeaoAzul1">
-				<EasingDoubleKeyFrame x:Name="PeaoMovimentoY" KeyTime="0:0:0.6" Value="0"/>
-			</DoubleAnimationUsingKeyFrames>
-		</Storyboard>
-		<Storyboard x:Key="loco">
+        <Storyboard x:Key="PeaoMoverCima">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="PeaoAzul1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-179"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="PeaoAzul1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="90" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MoverPeaoLado" RepeatBehavior="1x">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="PeaoAzul1">
+                <EasingDoubleKeyFrame x:Name="PeaoMovimentoX" KeyTime="0:0:0.6" Value="-38"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="PeaoAzul1">
+                <EasingDoubleKeyFrame x:Name="PeaoMovimentoY" KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="loco">
 
-			<PointAnimation
+            <PointAnimation
                 Storyboard.TargetProperty="Center"
                 Storyboard.TargetName="PeaoAzul1"
                 Duration="0:0:2" From="-38,0" To="-58,0" />
-		</Storyboard>
-	</Window.Resources>
-	<Window.Triggers>
-		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
-			<!--<BeginStoryboard Storyboard="{StaticResource PeaoMoverCima}"/>
+        </Storyboard>
+        <Storyboard x:Key="DadoGirando">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="btnGirarDado">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-90.015"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="377.776"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="17.955"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-809.418"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnGirarDado">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-1.012"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1.531"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="1.794"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1.529"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnGirarDado">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1.528"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="1.759"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnGirarDado">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-15.092"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="16.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="11.377"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="5.602"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnGirarDado">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-4.891"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="8.833"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="-2.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-38.696"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-10.854"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="btnGirarDado">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="28.725"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-35.636"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" Storyboard.TargetName="btnGirarDado">
+                <EasingDoubleKeyFrame KeyTime="0" Value="15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="15"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Turnos" AutoReverse="True">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.KernelType)" Storyboard.TargetName="lblnumTurnos">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static KernelType.Box}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static KernelType.Box}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)" Storyboard.TargetName="lblnumTurnos">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="9"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="15"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblnumTurnos">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblnumTurnos">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Rodadas" AutoReverse="True">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)" Storyboard.TargetName="lblVezJogador">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblVezJogador">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="lblVezJogador">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="2.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="lblVezJogador">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.KernelType)" Storyboard.TargetName="lblVezJogador">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static KernelType.Gaussian}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static KernelType.Box}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static KernelType.Box}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="PulaPeca">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="PeaoAzul4">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="47" KeySpline="0.09,0.96,1,1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.2" Value="27" KeySpline="0.1,0.9,1,1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="PeaoAzul4">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="48" KeySpline="0.09,0.96,1,1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.2" Value="28" KeySpline="0.1,0.9,1,1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" Storyboard.TargetName="PeaoAzul4">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="IniciaJogoSome">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="btnIniciaJogo">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="84.25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="178.334"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="315.547"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="406.775"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="562.958"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="815.896"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="898.394"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnIniciaJogo">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.795"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.453"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.283"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.283"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.175"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.007"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnIniciaJogo">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.738"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.613"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.42"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.42"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.269"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.004"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnIniciaJogo">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-10.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="5.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="5.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="8.917"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnIniciaJogo">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-9"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="3.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="15.167"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)" Storyboard.TargetName="btnIniciaJogo">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="3"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="15"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.KernelType)" Storyboard.TargetName="btnIniciaJogo">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static KernelType.Gaussian}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static KernelType.Box}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="SomeBotaoJogador1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="btnPlayer1">
+
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="40"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnPlayer1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-0.424"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.424"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.121"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-0.01"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnPlayer1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-7.971"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-7.971"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-12.166"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="36.334"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnPlayer1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="9.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="9.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="6.667"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnPlayer1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-0.006"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="ToggleButtonStyle6" TargetType="{x:Type ToggleButton}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border" BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="20">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualState x:Name="Checked">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="contentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="CPU 2"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked"/>
+                                    <VisualState x:Name="Indeterminate">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="contentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Desativado"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ToggleButtonStyle7" TargetType="{x:Type ToggleButton}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="20">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualState x:Name="Checked">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="contentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="CPU 3"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked"/>
+                                    <VisualState x:Name="Indeterminate">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="contentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Desativado"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--<Storyboard x:Key="SomeBotaoJogador2">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="btnPlayer2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="40"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnPlayer2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-0.424"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.424"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.121"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-0.01"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnPlayer2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-7.971"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-7.971"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-12.166"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="36.334"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnPlayer2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="9.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="9.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="6.667"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnPlayer2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-0.006"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>-->
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <!--<BeginStoryboard Storyboard="{StaticResource SomeBotaoJogador}"/>-->
+            <!--<BeginStoryboard Storyboard="{StaticResource IniciaJogoSome}"/>-->
+            <!--<BeginStoryboard Storyboard="{StaticResource PulaPeca}"/>-->
+            <!--<BeginStoryboard Storyboard="{StaticResource Rodadas}"/>-->
+            <!--<BeginStoryboard Storyboard="{StaticResource Turnos}"/>-->
+            <!--<BeginStoryboard Storyboard="{StaticResource DadoGirando}"/>-->
+            <!--<BeginStoryboard Storyboard="{StaticResource PeaoMoverCima}"/>
             <BeginStoryboard Storyboard="{StaticResource MoverPeaoLado}"/>-->
-		</EventTrigger>
-	</Window.Triggers>
-	<Window.Background>
-		<ImageBrush ImageSource="pack://siteoforigin:,,,/Oak PalazzoFumo sample.jpg"/>
-	</Window.Background>
+        </EventTrigger>
+    </Window.Triggers>
+    <Window.Background>
+        <ImageBrush ImageSource="pack://siteoforigin:,,,/Oak PalazzoFumo sample.jpg"/>
+    </Window.Background>
 
-	<Canvas Margin="0,0,360,24.311">
+    <Canvas Margin="0,0,360,24.311">
 
-		<Grid HorizontalAlignment="Left" Width="753" Height="595" VerticalAlignment="Top">
-			<Grid x:Name="FinishLine" HorizontalAlignment="Right" Height="122" Margin="0,0,407,251.333" VerticalAlignment="Bottom" Width="121.999">
+        <Grid HorizontalAlignment="Left" Width="753" Height="595" VerticalAlignment="Top">
+            <Grid x:Name="FinishLine" HorizontalAlignment="Right" Height="122" Margin="0,0,407,251.333" VerticalAlignment="Bottom" Width="121.999">
 
-				<Canvas Background="Black">
-					<Polygon x:Name="FinalBlue"
+                <Canvas Background="Black">
+                    <Polygon x:Name="FinalBlue"
 						Points="300,200 400,125 400,275 300,200"
 						Stroke="Black" 
 						StrokeThickness="2" Canvas.Left="-236.251" Canvas.Top="-140" Height="262" Width="384.5" Fill="DarkBlue"/>
-					<Polygon
+                    <Polygon
 						Points="300,200 400,125 400,275 300,200"
 						Stroke="Black" 
 						StrokeThickness="2" Canvas.Left="-41.084" Canvas.Top="-16.083" Height="262" Width="384.5" RenderTransformOrigin="0.5,0.5" Fill="Green">
-						<Polygon.RenderTransform>
-							<TransformGroup>
-								<ScaleTransform/>
-								<SkewTransform/>
-								<RotateTransform Angle="180"/>
-								<TranslateTransform/>
-							</TransformGroup>
-						</Polygon.RenderTransform>
-					</Polygon>
-					<Polygon
+                        <Polygon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <Polygon
 						Points="300,200 400,125 400,275 300,200"
 						Stroke="Black" 
 						StrokeThickness="2" Canvas.Left="-77.334" Canvas.Top="-176.25" Height="262" Width="384.5" RenderTransformOrigin="0.5,0.5" Fill="Yellow">
-						<Polygon.RenderTransform>
-							<TransformGroup>
-								<ScaleTransform/>
-								<SkewTransform/>
-								<RotateTransform Angle="90"/>
-								<TranslateTransform/>
-							</TransformGroup>
-						</Polygon.RenderTransform>
-					</Polygon>
-					<Polygon
+                        <Polygon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <Polygon
 						Points="300,200 400,125 400,275 300,200"
 						Stroke="Black" 
 						StrokeThickness="2" Canvas.Left="-200.501" Canvas.Top="19.25" Height="262" Width="384.5" RenderTransformOrigin="0.5,0.5" Fill="Red">
-						<Polygon.RenderTransform>
-							<TransformGroup>
-								<ScaleTransform/>
-								<SkewTransform/>
-								<RotateTransform Angle="-90"/>
-								<TranslateTransform/>
-							</TransformGroup>
-						</Polygon.RenderTransform>
-					</Polygon>
-					<!--<Polygon Fill="Green" Canvas.Left="-12.001" Canvas.Top="-11.832" Height="122" Width="122" RenderTransformOrigin="0.5,0.5">
+                        <Polygon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <!--<Polygon Fill="Green" Canvas.Left="-12.001" Canvas.Top="-11.832" Height="122" Width="122" RenderTransformOrigin="0.5,0.5">
 					<Polygon.RenderTransform>
 						<TransformGroup>
 							<ScaleTransform/>
@@ -160,310 +535,453 @@
 				<PointCollection>120,150 0,150 50,0</PointCollection>
 			</Polygon.Points>
 				</Polygon>-->
-				</Canvas>
-			</Grid>
-			<Grid x:Name="Green" HorizontalAlignment="Right" Height="121.5" Margin="0,223.332,528.999,0" VerticalAlignment="Top" Width="220" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
-				<Grid.RowDefinitions>
-					<RowDefinition />
-					<RowDefinition/>
-					<RowDefinition/>
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Rectangle x:Name="R01" Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="0" Grid.Row="1" Uid="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="0" Grid.Row="2" Uid="2" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                </Canvas>
+            </Grid>
+            <Grid x:Name="Green" HorizontalAlignment="Right" Height="121.5" Margin="0,223.332,528.999,0" VerticalAlignment="Top" Width="220" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="20" Direction="100" BlurRadius="15"/>
+                </Grid.Effect>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Rectangle x:Name="R01" Grid.Column="0" Grid.Row="0" Uid="0" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="0" Grid.Row="1" Uid="1" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="0" Grid.Row="2" Uid="2" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-				<Rectangle Grid.Column="1" Grid.Row="2" Uid="5" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="2" Grid.Row="0" Uid="6" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="2" Grid.Row="2" Uid="8" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="3" Grid.Row="0" Uid="9" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="3" Grid.Row="2" Uid="11" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="4" Grid.Row="0" Uid="12" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="4" Grid.Row="2" Uid="14" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="5" Grid.Row="0" Uid="15" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="5" Grid.Row="2" Uid="17" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<!--Grids verdes especiais-->
-				<Rectangle Grid.Column="1" Grid.Row="0" Uid="3" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="1" Grid.Row="1" Uid="4" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="2" Grid.Row="1" Uid="7" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="3" Grid.Row="1" Uid="10" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="4" Grid.Row="1" Uid="13" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="5" Grid.Row="1" Uid="16" Fill="Green" Stroke="Black" StrokeThickness="2"/>
-			</Grid>
-			<Grid x:Name="Blue" HorizontalAlignment="Right" Height="121.5" Margin="0,222.582,185.083,0" VerticalAlignment="Top" Width="222" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
-				<Grid.RowDefinitions>
-					<RowDefinition />
-					<RowDefinition/>
-					<RowDefinition/>
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
+                <Rectangle Grid.Column="1" Grid.Row="2" Uid="5" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="2" Grid.Row="0" Uid="6" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="2" Grid.Row="2" Uid="8" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="3" Grid.Row="0" Uid="9" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="3" Grid.Row="2" Uid="11" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="4" Grid.Row="0" Uid="12" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="4" Grid.Row="2" Uid="14" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="5" Grid.Row="0" Uid="15" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="5" Grid.Row="2" Uid="17" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <!--Grids verdes especiais-->
+                <Rectangle Grid.Column="1" Grid.Row="0" Uid="3" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="1" Grid.Row="1" Uid="4" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="2" Grid.Row="1" Uid="7" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="3" Grid.Row="1" Uid="10" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="4" Grid.Row="1" Uid="13" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="5" Grid.Row="1" Uid="16" Fill="Green" Stroke="Black" StrokeThickness="2"/>
+            </Grid>
+            <Grid x:Name="Blue" HorizontalAlignment="Right" Height="121.5" Margin="0,222.582,185.083,0" VerticalAlignment="Top" Width="222" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="20" BlurRadius="15"/>
+                </Grid.Effect>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
 
-				<Rectangle Grid.Column="5" Grid.Row="2" Uid="18" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="5" Grid.Row="1" Uid="19" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="5" Grid.Row="0" Uid="20" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="5" Grid.Row="2" Uid="18" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="5" Grid.Row="1" Uid="19" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="5" Grid.Row="0" Uid="20" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-				<Rectangle Grid.Column="4" Grid.Row="0" Uid="21" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="4" Grid.Row="0" Uid="21" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-				<Rectangle Grid.Column="3" Grid.Row="0" Uid="24" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="3" Grid.Row="2" Uid="26" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="3" Grid.Row="0" Uid="24" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="3" Grid.Row="2" Uid="26" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-				<Rectangle Grid.Column="2" Grid.Row="0" Uid="27" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="2" Grid.Row="2" Uid="29" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="2" Grid.Row="0" Uid="27" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="2" Grid.Row="2" Uid="29" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-				<Rectangle Grid.Column="1" Grid.Row="0" Uid="30" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="1" Grid.Row="2" Uid="32" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="1" Grid.Row="0" Uid="30" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="1" Grid.Row="2" Uid="32" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-				<Rectangle x:Name="Q33" Grid.Column="0" Grid.Row="0" Uid="33" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
-				<Rectangle Grid.Column="0" Grid.Row="2" Uid="35" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle x:Name="Q33" Grid.Column="0" Grid.Row="0" Uid="33" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
+                <Rectangle Grid.Column="0" Grid.Row="2" Uid="35" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Black" StrokeThickness="2"/>
 
-				<!--<Rectangle Grid.Column="0" Grid.Row="3" Uid="3" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>-->
+                <!--<Rectangle Grid.Column="0" Grid.Row="3" Uid="3" Fill="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>-->
 
-				<!--Grids azuis especiais-->
-				<Rectangle Grid.Column="4" Grid.Row="2" Uid="22" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="4" Grid.Row="1" Uid="23" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="3" Grid.Row="1" Uid="25" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="2" Grid.Row="1" Uid="28" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="1" Grid.Row="1" Uid="31" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="0" Grid.Row="1" Uid="34" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
-			</Grid>
-			<Grid x:Name="Red" HorizontalAlignment="Left" Margin="174.249,50.914,0,0" Width="221" Height="121.5" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
-				<Grid.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform Angle="90"/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Grid.RenderTransform>
-				<Grid.RowDefinitions>
-					<RowDefinition />
-					<RowDefinition/>
-					<RowDefinition/>
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Rectangle Grid.Column="0" Grid.Row="0" Uid="54" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="0" Grid.Row="1" Uid="55" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="0" Grid.Row="2" Uid="56" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <!--Grids azuis especiais-->
+                <Rectangle Grid.Column="4" Grid.Row="2" Uid="22" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="4" Grid.Row="1" Uid="23" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="3" Grid.Row="1" Uid="25" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="2" Grid.Row="1" Uid="28" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="1" Grid.Row="1" Uid="31" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="0" Grid.Row="1" Uid="34" Fill="DarkBlue" StrokeThickness="2" Stroke="Black"/>
+            </Grid>
+            <Grid x:Name="Red" HorizontalAlignment="Left" Margin="174.249,50.914,0,0" Width="221" Height="121.5" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="20" BlurRadius="15" Direction="600"/>
+                </Grid.Effect>
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Column="0" Grid.Row="0" Uid="54" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="0" Grid.Row="1" Uid="55" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="0" Grid.Row="2" Uid="56" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="1" Grid.Row="2" Uid="59" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="1" Grid.Row="2" Uid="59" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="2" Grid.Row="0" Uid="60" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="2" Grid.Row="2" Uid="62" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="2" Grid.Row="0" Uid="60" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="2" Grid.Row="2" Uid="62" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="3" Grid.Row="0" Uid="63" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="3" Grid.Row="2" Uid="65" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="3" Grid.Row="0" Uid="63" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="3" Grid.Row="2" Uid="65" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="4" Grid.Row="0" Uid="66" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="4" Grid.Row="2" Uid="68" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="4" Grid.Row="0" Uid="66" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="4" Grid.Row="2" Uid="68" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="5" Grid.Row="0" Uid="69" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="5" Grid.Row="2" Uid="71" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="5" Grid.Row="0" Uid="69" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="5" Grid.Row="2" Uid="71" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<!--Grids vermelhos especiais-->
-				<Rectangle Grid.Column="1" Grid.Row="0" Uid="57" Fill="Red" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="1" Grid.Row="1" Uid="58" Fill="Red" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="2" Grid.Row="1" Uid="61" Fill="Red" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="3" Grid.Row="1" Uid="64" Fill="Red" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="4" Grid.Row="1" Uid="67" Fill="Red" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="5" Grid.Row="1" Uid="70" Fill="Red" StrokeThickness="2" Stroke="Black"/>
-			</Grid>
-			<Grid x:Name="Yellow" HorizontalAlignment="Left" Margin="174.66,0,0,80.189" Height="121.5" Width="221" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom">
-				<Grid.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform Angle="90"/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</Grid.RenderTransform>
-				<Grid.RowDefinitions>
-					<RowDefinition />
-					<RowDefinition/>
-					<RowDefinition/>
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Rectangle Grid.Column="0" Grid.Row="0" Uid="36" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="0" Grid.Row="2" Uid="38" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <!--Grids vermelhos especiais-->
+                <Rectangle Grid.Column="1" Grid.Row="0" Uid="57" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="1" Grid.Row="1" Uid="58" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="2" Grid.Row="1" Uid="61" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="3" Grid.Row="1" Uid="64" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="4" Grid.Row="1" Uid="67" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="5" Grid.Row="1" Uid="70" Fill="Red" StrokeThickness="2" Stroke="Black"/>
+            </Grid>
+            <Grid x:Name="Yellow" HorizontalAlignment="Left" Margin="174.66,0,0,80.189" Height="121.5" Width="221" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="20" BlurRadius="15"/>
+                </Grid.Effect>
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Column="0" Grid.Row="0" Uid="36" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="0" Grid.Row="2" Uid="38" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="1" Grid.Row="0" Uid="39" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="1" Grid.Row="2" Uid="41" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="1" Grid.Row="0" Uid="39" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="1" Grid.Row="2" Uid="41" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="2" Grid.Row="0" Uid="42" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="2" Grid.Row="2" Uid="44" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="2" Grid.Row="0" Uid="42" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="2" Grid.Row="2" Uid="44" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="3" Grid.Row="0" Uid="45" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="3" Grid.Row="2" Uid="47" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="3" Grid.Row="0" Uid="45" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="3" Grid.Row="2" Uid="47" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="4" Grid.Row="0" Uid="49" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="4" Grid.Row="0" Uid="49" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<Rectangle Grid.Column="5" Grid.Row="0" Uid="51" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="5" Grid.Row="1" Uid="52" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="5" Grid.Row="2" Uid="53" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="5" Grid.Row="0" Uid="51" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="5" Grid.Row="1" Uid="52" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="5" Grid.Row="2" Uid="53" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" StrokeThickness="2" Stroke="Black"/>
 
-				<!--Grids amarelos especiais-->
-				<Rectangle Grid.Column="0" Grid.Row="1" Uid="37" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="1" Grid.Row="1" Uid="40" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="2" Grid.Row="1" Uid="43" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="3" Grid.Row="1" Uid="46" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="4" Grid.Row="1" Uid="48" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
-				<Rectangle Grid.Column="4" Grid.Row="2" Uid="50" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
-			</Grid>
-			<GridSplitter HorizontalAlignment="Left" Margin="567.917,0,0,24.833" Width="5" Background="Black"/>
-			<GridSplitter HorizontalAlignment="Left" Margin="-0.999,0,0,24.833" Width="5" Background="Black"/>
-			<GridSplitter HorizontalAlignment="Left" Margin="282.917,283,0,-258.167" Width="5" Background="Black" RenderTransformOrigin="0.5,0.5">
-				<GridSplitter.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform Angle="90"/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</GridSplitter.RenderTransform>
-			</GridSplitter>
-			<GridSplitter HorizontalAlignment="Left" Margin="280.417,-282.833,0,307.666" Width="5" Background="Black" RenderTransformOrigin="0.5,0.5">
-				<GridSplitter.RenderTransform>
-					<TransformGroup>
-						<ScaleTransform/>
-						<SkewTransform/>
-						<RotateTransform Angle="90"/>
-						<TranslateTransform/>
-					</TransformGroup>
-				</GridSplitter.RenderTransform>
-			</GridSplitter>
-			<!--COLOCAR CANVAS AO INVÉS DE UM GRID-->
-			<Grid HorizontalAlignment="Left" Height="595.333" Margin="568,4.332,-173,-4.332" VerticalAlignment="Top" Width="358">
+                <!--Grids amarelos especiais-->
+                <Rectangle Grid.Column="0" Grid.Row="1" Uid="37" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="1" Grid.Row="1" Uid="40" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="2" Grid.Row="1" Uid="43" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="3" Grid.Row="1" Uid="46" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="4" Grid.Row="1" Uid="48" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+                <Rectangle Grid.Column="4" Grid.Row="2" Uid="50" Fill="Yellow" StrokeThickness="2" Stroke="Black"/>
+            </Grid>
+            <GridSplitter HorizontalAlignment="Left" Margin="567.917,0,0,24.833" Width="5" Background="Black"/>
+            <GridSplitter HorizontalAlignment="Left" Margin="-0.999,0,0,24.833" Width="5" Background="Black"/>
+            <GridSplitter HorizontalAlignment="Left" Margin="282.917,283,0,-258.167" Width="5" Background="Black" RenderTransformOrigin="0.5,0.5">
+                <GridSplitter.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </GridSplitter.RenderTransform>
+            </GridSplitter>
+            <GridSplitter HorizontalAlignment="Left" Margin="280.417,-282.833,0,307.666" Width="5" Background="Black" RenderTransformOrigin="0.5,0.5">
+                <GridSplitter.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </GridSplitter.RenderTransform>
+            </GridSplitter>
+            <!--COLOCAR CANVAS AO INVÉS DE UM GRID-->
+            <Grid HorizontalAlignment="Left" Height="595.333" Margin="568,4.332,-173,-4.332" VerticalAlignment="Top" Width="358">
+                <Button x:Name="btnIniciaJogo" Content="INICIAR JOGO" Margin="17.5,359,145.833,0" VerticalAlignment="Top" Height="71" Click="IniciaJogo_Click" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="16" Style="{DynamicResource ButtonStyle2}">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="DarkBlue" Offset="0.899"/>
+                            <GradientStop Color="DarkGreen" Offset="0.619"/>
+                            <GradientStop Color="Yellow" Offset="0.345"/>
+                            <GradientStop Color="#FFFF0400" Offset="0.122"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:ControlStoryboardAction Storyboard="{StaticResource IniciaJogoSome}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Button.Effect>
+                        <BlurEffect Radius="0"/>
+                    </Button.Effect>
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <ToggleButton x:Name="btnPlayer1" Content="Jogador 1" HorizontalAlignment="Left" Height="33" Margin="17.5,104,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Red" BorderBrush="{x:Null}" BorderThickness="1" Style="{DynamicResource ToggleButtonStyle5}" Checked="btnPlayer1_Checked" Indeterminate="btnPlayer1_Indeterminate" RenderTransformOrigin="0.5,0.5">
+                    <ToggleButton.Effect>
+                        <DropShadowEffect ShadowDepth="10" Direction="400"/>
+                    </ToggleButton.Effect>
+                    <ToggleButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ToggleButton.RenderTransform>
+                </ToggleButton>
+                <ToggleButton x:Name="btnPlayer2" Content="Jogador 2" HorizontalAlignment="Left" Height="33" Margin="17.5,161,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Green" Style="{DynamicResource ToggleButtonStyle6}" Checked="btnPlayer2_Checked" Indeterminate="btnPlayer2_Indeterminate" BorderBrush="{x:Null}">
+                    <ToggleButton.Effect>
+                        <DropShadowEffect ShadowDepth="10" Direction="400"/>
+                    </ToggleButton.Effect>
+                    <ToggleButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ToggleButton.RenderTransform>
+                </ToggleButton>
+                <ToggleButton x:Name="btnPlayer3" Content="Jogador 3" HorizontalAlignment="Left" Height="33" Margin="17.5,218,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Yellow" Style="{DynamicResource ToggleButtonStyle7}" Checked="btnPlayer3_Checked" Indeterminate="btnPlayer3_Indeterminate" BorderBrush="{x:Null}">
+                    <ToggleButton.Effect>
+                        <DropShadowEffect Direction="800"/>
+                    </ToggleButton.Effect>
+                    <ToggleButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ToggleButton.RenderTransform>
+                </ToggleButton>
+                <ToggleButton x:Name="btnPlayer4" Content="Jogador 4" HorizontalAlignment="Left" Height="33" Margin="17.5,275,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="DarkBlue" Style="{DynamicResource ToggleButtonStyle4}" Checked="btnPlayer4_Checked" Indeterminate="btnPlayer4_Indeterminate" BorderBrush="{x:Null}">
+                    <ToggleButton.Effect>
+                        <DropShadowEffect ShadowDepth="400" Direction="800"/>
+                    </ToggleButton.Effect>
+                    <ToggleButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ToggleButton.RenderTransform>
+                </ToggleButton>
+                <Button x:Name="btnGirarDado" HorizontalAlignment="Left" Margin="210,218,0,0" VerticalAlignment="Top" Width="87" Click="GirarDado_Click" Height="90" BorderBrush="Black" BorderThickness="3" Style="{DynamicResource ButtonStyle1}" Content="{DynamicResource 1}" IsEnabled="False" RenderTransformOrigin="0.5,0.5">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:ControlStoryboardAction Storyboard="{StaticResource DadoGirando}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="15"/>
+                    </Button.Effect>
+                </Button>
+                <Grid Height="104" VerticalAlignment="Top" Background="#99000000">
+                    <Label Content="Turnos:" Margin="10,7,0,0" FontWeight="Bold" FontSize="18.667" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label x:Name="lblnumTurnos" Content="#" Margin="92,7,-13,0" FontWeight="Bold" FontSize="18.667" Foreground="White" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" d:LayoutOverrides="Width">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                <ei:ControlStoryboardAction/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Label.Effect>
+                            <BlurEffect/>
+                        </Label.Effect>
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label x:Name="lblVezJogador" Content="Escolha quantas pessoas jogarão:" HorizontalAlignment="Left" Margin="10,32,-89,23" Foreground="White" FontStretch="SemiExpanded" FontWeight="ExtraBlack" FontFamily="Segoe UI Black" FontSize="18.667" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                        <Label.Effect>
+                            <BlurEffect Radius="0"/>
+                        </Label.Effect>
+                    </Label>
+                </Grid>
+            </Grid>
+            <Ellipse x:Name="BaseVermelha" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Height="197.668" Canvas.Left="10" Stroke="Red" StrokeThickness="10" Canvas.Top="10" Width="202.083" Margin="355,10,196,388">
+                <Ellipse.Effect>
+                    <DropShadowEffect ShadowDepth="20" BlurRadius="15" Direction="500" RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoVermelho1" HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="63" Canvas.Top="147.25" Cursor="Hand" Margin="478,37,0,0" MouseLeftButtonDown="PeaoVermelho1_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoVermelho2"  HorizontalAlignment="Left" Height="27" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="133" Canvas.Top="147.25" Cursor="Hand" Margin="407,37,0,0" MouseLeftButtonDown="PeaoVermelho2_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoVermelho3"  HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="63" Canvas.Top="36" Cursor="Hand" Margin="478,147,0,0" MouseLeftButtonDown="PeaoVermelho3_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoVermelho4"  HorizontalAlignment="Left" Height="27" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="133" Canvas.Top="36.25" Cursor="Hand" Margin="408,147,0,0" MouseLeftButtonDown="PeaoVermelho4_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
 
-				<Label Content="Turnos:" HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667" Foreground="White"/>
-				<Label x:Name="lblnumTurnos" Content="#" HorizontalAlignment="Left" Margin="125.603,21,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18.667" Foreground="White"/>
-				<Button x:Name="btnIniciaJogo" Content="Iniciar jogo" HorizontalAlignment="Left" Margin="31,366,0,0" VerticalAlignment="Top" Width="100" Height="71" Click="IniciaJogo_Click"/>
-				<ToggleButton x:Name="btnPlayer1" Content="Jogador 1" HorizontalAlignment="Left" Height="33" Margin="31,104,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Red" BorderBrush="White" BorderThickness="1" Style="{DynamicResource ToggleButtonStyle1}"/>
-				<ToggleButton x:Name="btnPlayer2" Content="Jogador 2" HorizontalAlignment="Left" Height="33" Margin="31,161,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Green" Style="{DynamicResource ToggleButtonStyle2}"/>
-				<ToggleButton x:Name="btnPlayer3" Content="Jogador 3" HorizontalAlignment="Left" Height="33" Margin="31,218,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="Yellow" Style="{DynamicResource ToggleButtonStyle3}"/>
-				<ToggleButton x:Name="btnPlayer4" Content="Jogador 4" HorizontalAlignment="Left" Height="33" Margin="31,275,0,0" VerticalAlignment="Top" Width="100" IsThreeState="True" Background="DarkBlue" Style="{DynamicResource ToggleButtonStyle4}"/>
-				<Button x:Name="btnGirarDado" HorizontalAlignment="Left" Margin="210,218,0,0" VerticalAlignment="Top" Width="87" Click="GirarDado_Click" Height="90" BorderBrush="Black" BorderThickness="3" Style="{DynamicResource ButtonStyle1}" Content="{DynamicResource 1}" IsEnabled="False">
-					<Button.Effect>
-						<DropShadowEffect/>
-					</Button.Effect>
-				</Button>
-				<Label x:Name="numjogado" Content="Label" HorizontalAlignment="Left" Margin="235,313,0,0" VerticalAlignment="Top"/>
-				<Label x:Name="lblVezJogador" Content="Label" HorizontalAlignment="Left" Margin="44,61,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White"/>
-			</Grid>
-			<Ellipse x:Name="BaseVermelha" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Height="197.668" Canvas.Left="10" Stroke="Red" StrokeThickness="10" Canvas.Top="10" Width="202.083" Margin="355,10,196,388"/>
-			<Ellipse x:Name="PeaoVermelho1" HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="63" Canvas.Top="147.25" Cursor="Hand" Margin="478,37,0,0" MouseLeftButtonDown="PeaoVermelho1_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoVermelho2"  HorizontalAlignment="Left" Height="27" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="133" Canvas.Top="147.25" Cursor="Hand" Margin="407,37,0,0" MouseLeftButtonDown="PeaoVermelho2_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoVermelho3"  HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="63" Canvas.Top="36" Cursor="Hand" Margin="478,147,0,0" MouseLeftButtonDown="PeaoVermelho3_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoVermelho4"  HorizontalAlignment="Left" Height="27" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Red" Canvas.Left="133" Canvas.Top="36.25" Cursor="Hand" Margin="408,147,0,0" MouseLeftButtonDown="PeaoVermelho4_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
+            <Ellipse x:Name="BaseVerde" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Green" StrokeThickness="10" Margin="10,10,540.917,387.665">
+                <Ellipse.Effect>
+                    <DropShadowEffect ShadowDepth="20" Direction="500" BlurRadius="15"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoVerde1" HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="26" Fill="Green" Margin="63,147,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde1_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoVerde2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,147.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde2_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoVerde3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="63,36.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde3_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoVerde4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,36.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde4_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
 
-			<Ellipse x:Name="BaseVerde" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Green" StrokeThickness="10" Margin="10,10,540.917,387.665"/>
-			<Ellipse x:Name="PeaoVerde1" HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="26" Fill="Green" Margin="63,147,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde1_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoVerde2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,147.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde2_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoVerde3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="63,36.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde3_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoVerde4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Green" Margin="133,36.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoVerde4_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
+            <Ellipse x:Name="BaseAmarela" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Yellow" StrokeThickness="10" Margin="10,352,540.917,45.665">
+                <Ellipse.Effect>
+                    <DropShadowEffect ShadowDepth="20" Direction="600" BlurRadius="15"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoAmarelo1" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="63,489.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAmarelo1_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoAmarelo2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="133,489.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAmarelo2_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoAmarelo3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="63,378.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAmarelo3_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoAmarelo4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="133,378.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAmarelo4_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="BaseAzul" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="DarkBlue" StrokeThickness="10" Margin="355,352,195.917,45.665">
+                <Ellipse.Effect>
+                    <DropShadowEffect ShadowDepth="20" BlurRadius="15"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoAzul1" Style="{StaticResource OutofBase}" HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="26" Fill="DarkBlue" Margin="408,489,0,0" Cursor="Hand" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="PeaoAzul1_MouseLeftButtonDown" >
 
-			<Ellipse x:Name="BaseAmarela" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="Yellow" StrokeThickness="10" Margin="10,352,540.917,45.665"/>
-			<Ellipse x:Name="PeaoAmarelo1" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="63,489.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAmarelo1_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoAmarelo2"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="133,489.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAmarelo2_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoAmarelo3"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="63,378.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAmarelo3_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoAmarelo4"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="Yellow" Margin="133,378.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAmarelo4_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="BaseAzul" Fill="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Stroke="DarkBlue" StrokeThickness="10" Margin="355,352,195.917,45.665"/>
-			<Ellipse x:Name="PeaoAzul1" Style="{StaticResource OutofBase}" HorizontalAlignment="Left" Height="26" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="26" Fill="DarkBlue" Margin="408,489,0,0" Cursor="Hand" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="PeaoAzul1_MouseLeftButtonDown" >
-
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoAzul2" Style="{StaticResource OutofBase}" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,489.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAzul2_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoAzul3" Style="{StaticResource OutofBase}"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="408,378.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAzul3_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-			<Ellipse x:Name="PeaoAzul4" Style="{StaticResource OutofBase}"  HorizontalAlignment="Left" Height="28" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,378,0,0" Cursor="Hand" IsManipulationEnabled="True" MouseLeftButtonDown="PeaoAzul4_MouseLeftButtonDown">
-				<Ellipse.Effect>
-					<DropShadowEffect/>
-				</Ellipse.Effect>
-			</Ellipse>
-		</Grid>
-	</Canvas>
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoAzul2" Style="{StaticResource OutofBase}" HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,489.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAzul2_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoAzul3" Style="{StaticResource OutofBase}"  HorizontalAlignment="Left" Height="26.418" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="408,378.25,0,0" Cursor="Hand" MouseLeftButtonDown="PeaoAzul3_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <Ellipse x:Name="PeaoAzul4" Style="{StaticResource OutofBase}"  HorizontalAlignment="Left" Height="28" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="27" Fill="DarkBlue" Margin="478,378,0,0" Cursor="Hand" IsManipulationEnabled="True" MouseLeftButtonDown="PeaoAzul4_MouseLeftButtonDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect RenderingBias="Quality"/>
+                </Ellipse.Effect>
+            </Ellipse>
+        </Grid>
+    </Canvas>
 </Window>

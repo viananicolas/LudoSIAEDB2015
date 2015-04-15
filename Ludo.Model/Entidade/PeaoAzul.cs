@@ -120,6 +120,14 @@ namespace Ludo.Model.Entidade
 			else
 				goto Verificar;
 		}
+		public static void AI(bool IsAI)
+		{
+			if (IsAI)
+                {
+				Random escolhaPeao = new Random(1);
+				escolhaPeao.Next(0, 4);		
+				}
+		}
 
 	}
 }

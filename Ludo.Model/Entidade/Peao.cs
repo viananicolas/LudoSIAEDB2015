@@ -9,16 +9,17 @@ using System.Windows.Shapes;
 namespace Ludo.Model.Entidade
 {
 
-   
-    public abstract class Peao 
-    {
-        private string cor;
+
+	public abstract class Peao
+	{
+		private string cor;
 		private string numPeao;
 		private bool naBase;
 		private bool venceu;
+		private bool jogou = true;
 		private string currentPOS;
 		private Ellipse peaoSelecionado;
-		private int peoesBase=4;
+		private int peoesBase = 4;
 		private int peoesChegada = 0;
 		private int index = 0;
 		private int jogadasRestantes = 59;
@@ -35,7 +36,12 @@ namespace Ludo.Model.Entidade
 				this.peoesBase = value;
 			}
 		}
-		
+		public bool Jogou
+		{
+			get { return jogou; }
+			set { jogou = value; }
+		}
+
 		public Ellipse PeaoSelecionado
 		{
 			get { return peaoSelecionado; }
